@@ -385,8 +385,8 @@ const Index = () => {
 
                 <div className="rounded-2xl bg-white/95 text-black p-6 shadow-2xl">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-full bg-[#2ABCB4]/20 flex items-center justify-center text-2xl">
-                      🌊
+                    <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
+                      <img src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/13c4c3be-83b0-40dc-afe3-ab7099a953bb.jpeg" alt="Абрамова Ирина" className="w-full h-full object-cover object-top" />
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold">Абрамова Ирина</h4>
