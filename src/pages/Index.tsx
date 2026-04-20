@@ -389,8 +389,8 @@ const Index = () => {
                       🌊
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold">Куратор ретрита</h4>
-                      <p className="text-gray-500 text-sm">Мальдивы · Ретрит «Всё Возможно!»</p>
+                      <h4 className="text-lg font-semibold">Абрамова Ирина</h4>
+                      <p className="text-gray-500 text-sm">Психолог · Энерготерапевт · Расстановщик</p>
                     </div>
                   </div>
                   <div className="flex gap-2">
