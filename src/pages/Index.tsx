@@ -557,29 +557,27 @@ const Index = () => {
                   </a>
                 </div>
 
-                <div className="rounded-2xl bg-[#fdf0f5] ring-1 ring-pink-200 p-6 shadow-sm">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-pink-200">
-                      <img src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/13c4c3be-83b0-40dc-afe3-ab7099a953bb.jpeg" alt="Абрамова Ирина" className="w-full h-full object-cover object-top" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-[#3d1a2e]">Абрамова Ирина</h4>
-                      <p className="text-[#7a4060] text-sm">Психолог · Энерготерапевт · Расстановщик</p>
-                    </div>
+                <div className="rounded-2xl bg-[#fdf0f5] ring-1 ring-pink-200 overflow-hidden shadow-sm">
+                  <div className="w-full h-72 overflow-hidden">
+                    <img src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/13c4c3be-83b0-40dc-afe3-ab7099a953bb.jpeg" alt="Абрамова Ирина" className="w-full h-full object-cover object-top scale-110" style={{objectPosition: "center 20%"}} />
                   </div>
-                  <div className="flex gap-2">
-                    <a href="tel:+79511408363" className="flex-1">
-                      <Button className="w-full bg-[#2ABCB4] hover:bg-[#1fa8a0] text-white rounded-lg flex items-center justify-center gap-2">
-                        <Icon name="Phone" size={16} />
-                        Позвонить
-                      </Button>
-                    </a>
-                    <a href="https://vk.ru/abramova_garmony" target="_blank" rel="noopener noreferrer" className="flex-1">
-                      <Button className="w-full bg-[#0077FF] hover:bg-[#0066dd] text-white rounded-lg flex items-center justify-center gap-2">
-                        <Icon name="Users" size={16} />
-                        ВКонтакте
-                      </Button>
-                    </a>
+                  <div className="p-4">
+                    <h4 className="text-base font-semibold text-[#3d1a2e]">Абрамова Ирина</h4>
+                    <p className="text-[#7a4060] text-xs mb-3">Психолог · Энерготерапевт · Расстановщик</p>
+                    <div className="flex gap-2">
+                      <a href="tel:+79511408363" className="flex-1">
+                        <Button size="sm" className="w-full bg-[#2ABCB4] hover:bg-[#1fa8a0] text-white rounded-lg flex items-center justify-center gap-1.5 text-xs">
+                          <Icon name="Phone" size={13} />
+                          Позвонить
+                        </Button>
+                      </a>
+                      <a href="https://vk.ru/abramova_garmony" target="_blank" rel="noopener noreferrer" className="flex-1">
+                        <Button size="sm" className="w-full bg-[#0077FF] hover:bg-[#0066dd] text-white rounded-lg flex items-center justify-center gap-1.5 text-xs">
+                          <Icon name="Users" size={13} />
+                          ВКонтакте
+                        </Button>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
