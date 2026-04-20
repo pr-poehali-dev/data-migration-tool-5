@@ -285,6 +285,123 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Reviews Section */}
+      <section className="relative py-24 px-6 bg-white overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-0 w-80 h-80 bg-pink-100/50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#2ABCB4]/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-pink-50 ring-1 ring-pink-200 rounded-full mb-6">
+              <Icon name="Star" size={14} className="text-[#e91e8c]" />
+              <span className="text-sm font-medium text-[#e91e8c]">Отзывы участниц</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 text-[#3d1a2e] uppercase">
+              Они уже были там
+            </h2>
+            <p className="text-lg text-[#7a4060] max-w-2xl mx-auto">
+              Живые слова тех, кто прошёл этот путь
+            </p>
+          </div>
+
+          <div className="columns-1 md:columns-2 xl:columns-3 gap-6 space-y-6">
+            {/* Review 1 */}
+            <div className="break-inside-avoid rounded-2xl bg-[#fdf0f5] ring-1 ring-pink-200 p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#e91e8c] to-[#2ABCB4] flex items-center justify-center text-white font-semibold text-sm">А</div>
+                <div>
+                  <p className="font-semibold text-[#3d1a2e] text-sm">Участница ретрита</p>
+                  <div className="flex gap-0.5 mt-0.5">
+                    {[1,2,3,4,5].map(i => <Icon key={i} name="Star" size={11} className="text-[#e91e8c]" />)}
+                  </div>
+                </div>
+              </div>
+              <p className="text-[#3d1a2e] text-sm leading-relaxed">
+                Ирочка, хочу оставить самый честный и тёплый отзыв о нашем ретрите.<br /><br />
+                Я до сих пор ловлю себя на мыслях, что всё это было по-настоящему. Первый раз за границей, и сразу — 5 звёзд. Ещё недавно я даже мечтать о таком боялась... а ты взяла и помогла мне разрешить себе эту реальность.<br /><br />
+                Этот ретрит стал для меня мощным переходом. Я искренне смеялась, искренне плакала — проживала всё так глубоко, как никогда раньше.
+              </p>
+            </div>
+
+            {/* Review 2 — сторис результаты */}
+            <div className="break-inside-avoid rounded-2xl overflow-hidden shadow-sm ring-1 ring-pink-200">
+              <img
+                src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/d9bc5317-18ae-4e45-b20f-d739dc986099.jpeg"
+                alt="Результаты после ретрита в Египте"
+                className="w-full object-cover"
+              />
+            </div>
+
+            {/* Review 3 */}
+            <div className="break-inside-avoid rounded-2xl bg-white ring-1 ring-pink-200 p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#2ABCB4] to-[#e91e8c] flex items-center justify-center text-white font-semibold text-sm">М</div>
+                <div>
+                  <p className="font-semibold text-[#3d1a2e] text-sm">Участница ретрита</p>
+                  <div className="flex gap-0.5 mt-0.5">
+                    {[1,2,3,4,5].map(i => <Icon key={i} name="Star" size={11} className="text-[#e91e8c]" />)}
+                  </div>
+                </div>
+              </div>
+              <p className="text-[#3d1a2e] text-sm leading-relaxed">
+                Ирина, дорогая!! Я тебе так благодарна за это невероятное путешествие в мир изобилия, роскоши, быстрых трансформаций, где всё решалось по щелчку пальца!!!<br /><br />
+                Я даже ретритом это назвать не могу!!! Это было ВОЛШЕБСТВО!! Как ты это всё смогла, всё организовав, сделав всё на высшем уровне ❤️❤️❤️<br /><br />
+                Это было полное доверие 🙏🙏🙏
+              </p>
+            </div>
+
+            {/* Review 4 — скриншот Telegram */}
+            <div className="break-inside-avoid rounded-2xl bg-[#fdf0f5] ring-1 ring-pink-200 p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-[#e91e8c] flex items-center justify-center text-white font-semibold text-sm">Н</div>
+                <div>
+                  <p className="font-semibold text-[#3d1a2e] text-sm">Участница ретрита</p>
+                  <div className="flex gap-0.5 mt-0.5">
+                    {[1,2,3,4,5].map(i => <Icon key={i} name="Star" size={11} className="text-[#e91e8c]" />)}
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-4 ring-1 ring-pink-100 mb-3">
+                <p className="text-xs text-[#888] mb-1 font-medium">Ретрит — это одно из лучших моих в...</p>
+                <p className="text-[#3d1a2e] text-sm leading-relaxed">
+                  Да, ретрит который у нас был — это то, что невозможно объяснить просто словами, это волшебство на грани фантастики, я бы вот так описала наше путешествие 🧳
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-4 ring-1 ring-pink-100">
+                <p className="text-[#3d1a2e] text-sm leading-relaxed">
+                  Ретрит — это одно из лучших моих вложений. Я дорогая...
+                </p>
+              </div>
+            </div>
+
+            {/* Review 5 — CTA карточка */}
+            <div className="break-inside-avoid rounded-2xl bg-gradient-to-br from-[#e91e8c] to-[#c4177a] p-6 shadow-sm text-white">
+              <Icon name="Quote" size={28} className="text-white/40 mb-4" />
+              <p className="text-lg font-light leading-relaxed mb-6">
+                Столько любви было вокруг нас, столько всего искреннего! Меня все спрашивали, куда едешь, я отвечала — не знаю, знаю что Египет и всё!!!
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-semibold text-sm">Т</div>
+                <div>
+                  <p className="font-semibold text-sm">Участница ретрита</p>
+                  <div className="flex gap-0.5 mt-0.5">
+                    {[1,2,3,4,5].map(i => <Icon key={i} name="Star" size={11} className="text-white/80" />)}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-[#7a4060] text-sm mb-6">Хочешь стать следующей участницей?</p>
+            <Button className="bg-[#e91e8c] hover:bg-[#c4177a] text-white rounded-full px-8 py-3 font-medium shadow">
+              Записаться на ретрит
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="relative py-24 px-6 bg-[#fdf0f5]">
         <div className="max-w-7xl mx-auto">
