@@ -558,7 +558,7 @@ const Index = () => {
                 </div>
 
                 <div className="rounded-2xl bg-[#fdf0f5] ring-1 ring-pink-200 overflow-hidden shadow-sm">
-                  <div className="w-full h-72 overflow-hidden">
+                  <div className="w-full h-96 overflow-hidden">
                     <img src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/5dcf05cd-395f-415e-ab0c-a32698b3b434.jpeg" alt="Абрамова Ирина" className="w-full h-full object-cover" style={{objectPosition: "center 15%"}} />
                   </div>
                   <div className="p-4">
