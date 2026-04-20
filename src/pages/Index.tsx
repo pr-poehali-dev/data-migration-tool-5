@@ -205,6 +205,24 @@ const Index = () => {
               <h3 className="text-xl font-semibold mb-4 text-[#3d1a2e]">Мальдивы и Океан</h3>
               <p className="text-[#7a4060] leading-relaxed text-sm">Снорклинг, купание и бесконечная бирюза Индийского океана как фон для твоей перезагрузки.</p>
             </div>
+
+            <div className="rounded-2xl bg-white/80 ring-1 ring-pink-200 backdrop-blur p-8 text-center shadow-sm">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-pink-100 ring-1 ring-pink-200 mb-6">
+                <Icon name="Users" size={22} className="text-[#e91e8c]" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-[#3d1a2e]">Новые знакомства</h3>
+              <p className="text-[#7a4060] leading-relaxed text-sm">Камерная группа единомышленниц — здесь рождается настоящая дружба и поддержка на всю жизнь.</p>
+            </div>
+          </div>
+
+          {/* Фото в халатах */}
+          <div className="mt-12 rounded-3xl overflow-hidden h-80 relative">
+            <img
+              src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/ced06f38-1eb0-44e0-9fdf-b61137ff310f.jpeg"
+              alt="Участницы ретрита"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#fdf0f5]/60 via-transparent to-transparent" />
           </div>
         </div>
       </section>
@@ -258,9 +276,9 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-[#fdf0f5] via-transparent to-transparent" />
           <div className="absolute inset-0 bg-[#e91e8c]/10" />
         </div>
-        <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="relative z-10 flex items-start justify-center h-full pt-12">
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-light text-white drop-shadow-lg">
+            <p className="text-3xl md:text-4xl font-light text-white drop-shadow-lg uppercase tracking-widest">
               Отдыхай. Восстанавливайся. Расцветай.
             </p>
           </div>
