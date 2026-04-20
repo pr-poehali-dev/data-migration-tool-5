@@ -278,8 +278,8 @@ const Index = () => {
         </div>
         <div className="relative z-10 flex items-start justify-center h-full pt-12">
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-light text-white drop-shadow-lg uppercase tracking-widest">
-              Отдыхай. Восстанавливайся. Расцветай.
+            <p className="text-xl md:text-2xl text-white drop-shadow-lg tracking-widest" style={{fontFamily: "'Playfair Display', serif", fontStyle: "italic"}}>
+              Наполняйся. Отдыхай. Сияй.
             </p>
           </div>
         </div>
