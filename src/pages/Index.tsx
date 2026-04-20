@@ -90,7 +90,7 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              "url(https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/bbe2e317-a4fd-42da-9ce0-c0344d566196.jpg)",
+              "url(https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/6d2a8cc0-b6a3-4e57-bbf1-1218997b4d4b.jpeg)",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#0B1A1E]" />
@@ -126,7 +126,7 @@ const Index = () => {
             <span className="text-sm font-medium text-[#2ABCB4]">✦ Ретрит на Мальдивах · Вылет из Москвы · 7 дней</span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-6 text-balance">
+          <h1 className="text-4xl md:text-5xl font-light tracking-tight mb-6 text-balance">
             Всё возможно!
           </h1>
 
