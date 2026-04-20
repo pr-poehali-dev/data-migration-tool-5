@@ -104,7 +104,7 @@ const Index = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-1">
-            {["Ретрит", "Программа", "Преимущества", "FAQ", "Записаться"].map((item) => (
+            {["Ретрит", "Программа", "Преимущества", "FAQ"].map((item) => (
               <a
                 key={item}
                 href="#"
@@ -115,7 +115,10 @@ const Index = () => {
             ))}
           </div>
 
-          <Button className="bg-[#e91e8c] hover:bg-[#c4177a] text-white rounded-full px-6 font-medium">
+          <Button
+            className="bg-[#e91e8c] hover:bg-[#c4177a] text-white rounded-full px-6 font-medium"
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+          >
             Записаться
           </Button>
         </nav>
@@ -138,6 +141,7 @@ const Index = () => {
             <Button
               size="lg"
               className="bg-[#e91e8c] hover:bg-[#c4177a] text-white rounded-full px-8 py-4 text-lg font-medium shadow-lg"
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Записаться на ретрит
             </Button>
@@ -447,7 +451,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="relative py-24 px-6 bg-[#fdf0f5]">
+      <section id="contact" className="relative py-24 px-6 bg-[#fdf0f5]">
         <div className="max-w-7xl mx-auto">
           <div className="rounded-3xl bg-white ring-1 ring-pink-200 p-8 md:p-12 shadow-sm">
             <div className="text-center mb-16">
