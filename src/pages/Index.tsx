@@ -563,10 +563,10 @@ const Index = () => {
                         Позвонить
                       </Button>
                     </a>
-                    <a href="https://wa.me/79511408363" target="_blank" rel="noopener noreferrer" className="flex-1">
-                      <Button className="w-full bg-[#25D366] hover:bg-[#1ebe57] text-white rounded-lg flex items-center justify-center gap-2">
-                        <Icon name="MessageCircle" size={16} />
-                        WhatsApp
+                    <a href="https://vk.ru/abramova_garmony" target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button className="w-full bg-[#0077FF] hover:bg-[#0066dd] text-white rounded-lg flex items-center justify-center gap-2">
+                        <Icon name="Users" size={16} />
+                        ВКонтакте
                       </Button>
                     </a>
                   </div>
