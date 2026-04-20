@@ -122,16 +122,16 @@ const Index = () => {
 
         {/* Hero Content */}
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-120px)] px-6 text-center">
-          <div className="mb-6 px-4 py-2 bg-white/50 ring-1 ring-[#2ABCB4]/60 backdrop-blur rounded-full">
-            <span className="text-sm font-medium text-[#2ABCB4]">✦ Ретрит на Мальдивах · Вылет из Москвы · 7 дней</span>
+          <div className="mb-6 px-4 py-2 bg-white/50 ring-1 ring-[#0e8a84]/60 backdrop-blur rounded-full">
+            <span className="text-sm font-medium text-[#0a7a74]">✦ РЕТРИТ НА МАЛЬДИВАХ · ВЫЛЕТ ИЗ МОСКВЫ · 7 ДНЕЙ</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-light tracking-tight mb-6 text-white drop-shadow-lg">
-            Всё возможно!
+          <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-6 text-white drop-shadow-lg uppercase" style={{fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.08em'}}>
+            Всё Возможно!
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/95 max-w-3xl mb-12 leading-relaxed text-pretty drop-shadow">
-            Перезагрузи сознание, открой новые горизонты и позволь себе окунуться в мир гармонии и внутренней свободы на берегу Индийского океана.
+          <p className="text-xl md:text-2xl text-white max-w-3xl mb-12 leading-relaxed text-pretty drop-shadow-lg font-light" style={{fontFamily: "'Cormorant Garamond', serif"}}>
+            Этот ретрит — ваш шанс перезагрузить своё сознание и открыть новые горизонты. Позвольте себе окунуться в мир новых возможностей и гармонии. Мальдивы ждут вас!
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
@@ -171,12 +171,12 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 text-[#3d1a2e]">
               Что тебя ждёт
             </h2>
-            <p className="text-[#2ABCB4] text-lg">Женский ретрит — место силы и радости</p>
+            <p className="text-[#0a7a74] text-lg font-medium">Женский ретрит — место силы и радости</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             <div className="rounded-2xl bg-white/80 ring-1 ring-pink-200 backdrop-blur p-8 text-center shadow-sm">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#2ABCB4]/15 ring-1 ring-[#2ABCB4]/30 mb-6">
-                <Icon name="Sparkles" size={22} className="text-[#2ABCB4]" />
+                <Icon name="Sparkles" size={22} className="text-[#0a7a74]" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-[#3d1a2e]">Трансформация мышления</h3>
               <p className="text-[#7a4060] leading-relaxed text-sm">Снятие внутренних барьеров и ограничивающих убеждений через мощные авторские техники.</p>
@@ -192,7 +192,7 @@ const Index = () => {
 
             <div className="rounded-2xl bg-white/80 ring-1 ring-pink-200 backdrop-blur p-8 text-center shadow-sm">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#2ABCB4]/15 ring-1 ring-[#2ABCB4]/30 mb-6">
-                <Icon name="Sun" size={22} className="text-[#2ABCB4]" />
+                <Icon name="Sun" size={22} className="text-[#0a7a74]" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-[#3d1a2e]">Йога и медитации</h3>
               <p className="text-[#7a4060] leading-relaxed text-sm">Утренняя йога на пляже и вечерние медитации у моря — каждый день в окружении океана.</p>
@@ -200,7 +200,7 @@ const Index = () => {
 
             <div className="rounded-2xl bg-white/80 ring-1 ring-pink-200 backdrop-blur p-8 text-center shadow-sm">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#2ABCB4]/15 ring-1 ring-[#2ABCB4]/30 mb-6">
-                <Icon name="Waves" size={22} className="text-[#2ABCB4]" />
+                <Icon name="Waves" size={22} className="text-[#0a7a74]" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-[#3d1a2e]">Мальдивы и Океан</h3>
               <p className="text-[#7a4060] leading-relaxed text-sm">Снорклинг, купание и бесконечная бирюза Индийского океана как фон для твоей перезагрузки.</p>
