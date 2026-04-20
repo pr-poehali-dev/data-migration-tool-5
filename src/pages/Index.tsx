@@ -168,7 +168,7 @@ const Index = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 text-[#3d1a2e]">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 text-[#3d1a2e] uppercase">
               Что тебя ждёт
             </h2>
             <p className="text-[#0a7a74] text-lg font-medium">Женский ретрит — место силы и радости</p>
@@ -194,8 +194,8 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#2ABCB4]/15 ring-1 ring-[#2ABCB4]/30 mb-6">
                 <Icon name="Sun" size={22} className="text-[#0a7a74]" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-[#3d1a2e]">Йога и медитации</h3>
-              <p className="text-[#7a4060] leading-relaxed text-sm">Утренняя йога на пляже и вечерние медитации у моря — каждый день в окружении океана.</p>
+              <h3 className="text-xl font-semibold mb-4 text-[#3d1a2e]">Медитации и релакс</h3>
+              <p className="text-[#7a4060] leading-relaxed text-sm">Никаких сильных физических нагрузок — только релакс, дыхательные практики и мягкие медитации у моря.</p>
             </div>
 
             <div className="rounded-2xl bg-white/80 ring-1 ring-pink-200 backdrop-blur p-8 text-center shadow-sm">
