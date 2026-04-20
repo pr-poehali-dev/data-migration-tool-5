@@ -372,6 +372,15 @@ const Index = () => {
                     </div>
                     <span>Камерная группа — ограниченное количество мест</span>
                   </div>
+                  <a
+                    href="tel:+79511408363"
+                    className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-[#2ABCB4]/20 flex items-center justify-center flex-shrink-0">
+                      <Icon name="Phone" size={14} className="text-[#2ABCB4]" />
+                    </div>
+                    <span>+7 951 140-83-63</span>
+                  </a>
                 </div>
 
                 <div className="rounded-2xl bg-white/95 text-black p-6 shadow-2xl">
@@ -384,10 +393,20 @@ const Index = () => {
                       <p className="text-gray-500 text-sm">Мальдивы · Ретрит «Всё Возможно!»</p>
                     </div>
                   </div>
-                  <Button className="w-full bg-[#2ABCB4] hover:bg-[#1fa8a0] text-white rounded-lg flex items-center justify-center gap-2">
-                    <Mail className="w-4 h-4" />
-                    Написать куратору
-                  </Button>
+                  <div className="flex gap-2">
+                    <a href="tel:+79511408363" className="flex-1">
+                      <Button className="w-full bg-[#2ABCB4] hover:bg-[#1fa8a0] text-white rounded-lg flex items-center justify-center gap-2">
+                        <Icon name="Phone" size={16} />
+                        Позвонить
+                      </Button>
+                    </a>
+                    <a href="https://wa.me/79511408363" target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button className="w-full bg-[#25D366] hover:bg-[#1ebe57] text-white rounded-lg flex items-center justify-center gap-2">
+                        <Icon name="MessageCircle" size={16} />
+                        WhatsApp
+                      </Button>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
