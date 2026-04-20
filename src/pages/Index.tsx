@@ -115,12 +115,23 @@ const Index = () => {
             ))}
           </div>
 
-          <Button
-            className="bg-[#e91e8c] hover:bg-[#c4177a] text-white rounded-full px-6 font-medium"
-            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-          >
-            Записаться
-          </Button>
+          <div className="flex items-center gap-2">
+            <a
+              href="https://vk.ru/abramova_garmony"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 bg-white/50 ring-1 ring-pink-300/40 backdrop-blur rounded-full hover:bg-white/70 transition-colors text-sm text-[#3d1a2e]"
+            >
+              <Icon name="Users" size={15} className="text-[#0077FF]" />
+              <span className="hidden sm:inline">ВКонтакте</span>
+            </a>
+            <Button
+              className="bg-[#e91e8c] hover:bg-[#c4177a] text-white rounded-full px-6 font-medium"
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            >
+              Записаться
+            </Button>
+          </div>
         </nav>
 
         {/* Hero Content */}
@@ -588,6 +599,17 @@ const Index = () => {
           <p className="text-sm mt-1">
             <a href="tel:+79511408363" className="hover:text-[#2ABCB4] transition-colors">+7 951 140-83-63</a>
           </p>
+          <div className="flex items-center justify-center gap-3 mt-4">
+            <a
+              href="https://vk.ru/abramova_garmony"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-[#0077FF]/30 rounded-full transition-colors text-sm text-white/70 hover:text-white"
+            >
+              <Icon name="Users" size={14} className="text-[#0077FF]" />
+              ВКонтакте
+            </a>
+          </div>
         </div>
       </footer>
     </div>
