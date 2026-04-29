@@ -57,44 +57,29 @@ const benefits = [
 
 const reviews = [
   {
-    name: "Марина, 34 года",
-    city: "Москва",
-    avatar: "М",
-    color: "#B07A8A",
-    stars: 5,
-    before: "Жила на автопилоте, не высыпалась, раздражалась на детей",
-    text: "Через 2 недели в клубе я впервые за 3 года спала без снотворного. Перестала срываться на семью. Начала делать маленькие вещи только для себя — и это изменило всё.",
-    result: "−80% тревоги, нормальный сон",
+    label: "Похудение без диет",
+    img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/5aa714bb-9f1d-4d56-bfe5-5b8cbb17cddc.jpeg",
+    quote: "Я заметила, что худею. Объёмы, немного вес. Прям я Рада очень ❤️",
   },
   {
-    name: "Елена, 41 год",
-    city: "Санкт-Петербург",
-    avatar: "Е",
-    color: "#8C5C6B",
-    stars: 5,
-    before: "Не узнавала себя в зеркале, стеснялась своего тела",
-    text: "Я никогда не думала, что смогу полюбить своё тело. После первого месяца в клубе начала носить платья, которые боялась купить 5 лет. Муж говорит, что я светлее стала.",
-    result: "Приняла тело, стала женственнее",
+    label: "Здоровье и цикл наладился",
+    img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/f5fbe2fd-96c0-4357-bb33-29fd2d7644e5.jpeg",
+    quote: "Первый раз за долгое время месячные пришли и идут вообще незаметно 😮 обычно я первый день на нурофене...",
   },
   {
-    name: "Ольга, 29 лет",
-    city: "Екатеринбург",
-    avatar: "О",
-    color: "#C49AA6",
-    stars: 5,
-    before: "Тревога, непонимание чего хочу от жизни, ощущение пустоты",
-    text: "За 3 месяца поняла свои желания, нашла дело которое приносит деньги и радость. Ушла с нелюбимой работы — страшно не было. Ирина и девочки из клуба поддерживали каждый шаг.",
-    result: "Новая работа, доход вырос на 40%",
+    label: "«Ты гуру, наставник, волшебница»",
+    img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/6aeac33e-151b-4169-9c2f-cc523e05d0ee.jpeg",
+    quote: "Я теперь к психологам не пойду 😊 это все не то. Ты гуру наставник волшебница 🥰",
   },
   {
-    name: "Татьяна, 38 лет",
-    city: "Краснодар",
-    avatar: "Т",
-    color: "#9E7060",
-    stars: 5,
-    before: "Забыла кто я такая — только мама и жена, но не женщина",
-    text: "Клуб вернул меня себе. Я снова танцую, хожу на свидания с мужем, улыбаюсь по утрам. Звучит просто, но это было моей настоящей мечтой последние 5 лет.",
-    result: "Вернула женственность и радость",
+    label: "2 месяца — только разгон",
+    img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/4476ce3f-56b1-49b0-b1f2-75e6e97762fd.jpeg",
+    quote: "Столько инсайтов за всё это время 🙏 Безумно благодарна судьбе, что наши жизненные пути пересеклись. В нужное время.",
+  },
+  {
+    label: "Вышла из токсичных отношений",
+    img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/15216d44-2dce-4c6d-bf4e-1543459c1c71.jpeg",
+    quote: "Прошло около полугода после расстановок... Фу, пишу, и аж не верю что это была я 😂 И вот 2025 — год очищения 😊",
   },
 ]
 
@@ -504,46 +489,27 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {reviews.map((r, i) => (
-              <div key={i} className="bg-white/5 ring-1 ring-white/10 rounded-2xl p-6 sm:p-7 flex flex-col gap-4 hover:bg-white/8 transition-colors">
-                {/* Stars */}
-                <div className="flex gap-1">
-                  {Array.from({ length: r.stars }).map((_, s) => (
-                    <Icon key={s} name="Star" size={15} className="text-[#C49AA6]" />
-                  ))}
+              <div key={i} className="group flex flex-col gap-3">
+                {/* Лейбл */}
+                <div className="inline-flex items-center gap-2 self-start bg-[#B07A8A]/20 ring-1 ring-[#B07A8A]/30 rounded-full px-3 py-1.5">
+                  <Icon name="MessageCircle" size={12} className="text-[#C49AA6]" />
+                  <span className="text-xs font-semibold text-[#C49AA6]">{r.label}</span>
                 </div>
-
-                {/* Before */}
-                <div className="flex items-start gap-2">
-                  <span className="text-xs font-bold text-white/30 uppercase tracking-wider pt-0.5 shrink-0">Было:</span>
-                  <p className="text-white/40 text-sm italic">«{r.before}»</p>
+                {/* Скриншот переписки */}
+                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl group-hover:ring-[#B07A8A]/40 transition-all">
+                  <img
+                    src={r.img}
+                    alt={r.label}
+                    className="w-full object-cover object-top"
+                    style={{ maxHeight: "340px" }}
+                  />
                 </div>
-
-                {/* Review text */}
-                <p className="text-white/80 text-sm sm:text-base leading-relaxed flex-1">
-                  "{r.text}"
+                {/* Цитата под скриншотом */}
+                <p className="text-white/50 text-xs leading-relaxed px-1 italic line-clamp-2">
+                  {r.quote}
                 </p>
-
-                {/* Result badge */}
-                <div className="inline-flex items-center gap-2 bg-[#B07A8A]/20 ring-1 ring-[#B07A8A]/30 rounded-full px-4 py-2 self-start">
-                  <Icon name="TrendingUp" size={13} className="text-[#C49AA6]" />
-                  <span className="text-xs font-bold text-[#C49AA6]">{r.result}</span>
-                </div>
-
-                {/* Author */}
-                <div className="flex items-center gap-3 pt-2 border-t border-white/10">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
-                    style={{ backgroundColor: r.color }}
-                  >
-                    {r.avatar}
-                  </div>
-                  <div>
-                    <p className="text-white font-semibold text-sm">{r.name}</p>
-                    <p className="text-white/40 text-xs">{r.city}</p>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
