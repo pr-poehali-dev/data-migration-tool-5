@@ -489,41 +489,48 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             {[
               {
-                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/d431662d-0612-4aa2-b620-77e82e42a461.jpg",
-                name: "Марина, 34 года",
-                changes: ["−6 кг за 2 месяца", "Ушли отёки с лица", "Вернулся блеск в глазах"],
+                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/3c7d2f5f-13df-459e-b52a-35ae46adebed.png",
+                tag: "До и после",
+                changes: ["Ушли отёки с лица", "Снизился вес", "Блеск в глазах вернулся"],
               },
               {
-                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/77a0a8c7-7e84-4975-8592-a3b95c5d41b0.jpg",
-                name: "Елена, 41 год",
-                changes: ["−4 кг и −8 см в талии", "Кожа стала свежее", "Улыбается — не прячется"],
+                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/233a25f0-fc70-4be8-93e0-b7a38e55d036.jpeg",
+                tag: "Через месяц",
+                changes: ["Кожа стала свежее", "Ушла отёчность", "Улыбка вернулась"],
               },
               {
-                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/bde0c0e1-f989-466b-ab6f-6a075342a455.jpg",
-                name: "Ольга, 29 лет",
-                changes: ["Снизился вес без диет", "Ушла тяжесть и усталость", "Глаза горят — жизнь нравится"],
+                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/aa178efb-2515-4c3d-8305-11afb8f10626.jpeg",
+                tag: "До и после",
+                changes: ["Снизился вес без диет", "Разгладились морщинки", "Глаза горят — жизнь нравится"],
+              },
+              {
+                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/5982c162-4fe9-4db8-a0fd-bc1b43358d6a.jpeg",
+                tag: "Результаты участниц",
+                changes: ["Постройнели без запроса на вес", "Ушли отёки", "Победа над собой"],
               },
             ].map((p, i) => (
-              <div key={i} className="flex flex-col gap-4 group">
-                <div className="relative rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-2xl group-hover:ring-[#B07A8A]/50 transition-all">
+              <div key={i} className="flex flex-col gap-3 group">
+                <div className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl group-hover:ring-[#B07A8A]/50 transition-all">
                   <img
                     src={p.img}
-                    alt={p.name}
+                    alt={p.tag}
                     className="w-full object-cover object-top aspect-[3/4]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white font-bold text-base">{p.name}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute top-3 left-3">
+                    <span className="bg-[#B07A8A]/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full">
+                      {p.tag}
+                    </span>
                   </div>
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1.5 px-1">
                   {p.changes.map((c, j) => (
                     <div key={j} className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#C49AA6] shrink-0" />
-                      <span className="text-white/80 text-sm">{c}</span>
+                      <span className="text-white/75 text-sm">{c}</span>
                     </div>
                   ))}
                 </div>
