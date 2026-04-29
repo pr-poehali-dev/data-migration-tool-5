@@ -472,6 +472,67 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── TRANSFORMATIONS ── */}
+      <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#1A1210]">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 ring-1 ring-white/20 rounded-full mb-5">
+              <Icon name="Sparkles" size={14} className="text-[#C49AA6]" />
+              <span className="text-sm font-medium text-[#C49AA6]">Внешние изменения</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+              Они изменились<br />
+              <span className="text-[#C49AA6]">снаружи и внутри</span>
+            </h2>
+            <p className="text-white/50 text-base sm:text-lg max-w-xl mx-auto">
+              Ушли отёки, снизился вес — а главное появился блеск в глазах
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/d431662d-0612-4aa2-b620-77e82e42a461.jpg",
+                name: "Марина, 34 года",
+                changes: ["−6 кг за 2 месяца", "Ушли отёки с лица", "Вернулся блеск в глазах"],
+              },
+              {
+                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/77a0a8c7-7e84-4975-8592-a3b95c5d41b0.jpg",
+                name: "Елена, 41 год",
+                changes: ["−4 кг и −8 см в талии", "Кожа стала свежее", "Улыбается — не прячется"],
+              },
+              {
+                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/bde0c0e1-f989-466b-ab6f-6a075342a455.jpg",
+                name: "Ольга, 29 лет",
+                changes: ["Снизился вес без диет", "Ушла тяжесть и усталость", "Глаза горят — жизнь нравится"],
+              },
+            ].map((p, i) => (
+              <div key={i} className="flex flex-col gap-4 group">
+                <div className="relative rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-2xl group-hover:ring-[#B07A8A]/50 transition-all">
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    className="w-full object-cover object-top aspect-[3/4]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-bold text-base">{p.name}</p>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  {p.changes.map((c, j) => (
+                    <div key={j} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#C49AA6] shrink-0" />
+                      <span className="text-white/80 text-sm">{c}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── REVIEWS ── */}
       <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#2C2320]">
         <div className="max-w-7xl mx-auto">
