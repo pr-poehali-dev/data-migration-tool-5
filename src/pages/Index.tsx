@@ -494,30 +494,38 @@ const Index = () => {
               {
                 img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/3c7d2f5f-13df-459e-b52a-35ae46adebed.png",
                 tag: "До и после",
+                fit: "contain" as const,
+                quote: "«Нашла себя. Впервые за годы посмотрела в зеркало и улыбнулась»",
                 changes: ["Ушли отёки с лица", "Снизился вес", "Блеск в глазах вернулся"],
               },
               {
                 img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/233a25f0-fc70-4be8-93e0-b7a38e55d036.jpeg",
                 tag: "Через месяц",
+                fit: "cover" as const,
+                quote: "«Полюбила себя. Перестала извиняться за то, что существую»",
                 changes: ["Кожа стала свежее", "Ушла отёчность", "Улыбка вернулась"],
               },
               {
                 img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/aa178efb-2515-4c3d-8305-11afb8f10626.jpeg",
                 tag: "До и после",
+                fit: "cover" as const,
+                quote: "«Перестала заедать стресс. Еда перестала быть единственной радостью»",
                 changes: ["Снизился вес без диет", "Разгладились морщинки", "Глаза горят — жизнь нравится"],
               },
               {
                 img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/5982c162-4fe9-4db8-a0fd-bc1b43358d6a.jpeg",
                 tag: "Результаты участниц",
+                fit: "cover" as const,
+                quote: "«Победила себя. Пришла с другим запросом — а постройнела сама собой»",
                 changes: ["Постройнели без запроса на вес", "Ушли отёки", "Победа над собой"],
               },
             ].map((p, i) => (
               <div key={i} className="flex flex-col gap-3 group">
-                <div className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl group-hover:ring-[#B07A8A]/50 transition-all">
+                <div className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl group-hover:ring-[#B07A8A]/50 transition-all bg-black">
                   <img
                     src={p.img}
                     alt={p.tag}
-                    className="w-full object-cover object-top aspect-[3/4]"
+                    className={`w-full aspect-[3/4] ${p.fit === "contain" ? "object-contain" : "object-cover object-top"}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute top-3 left-3">
@@ -526,11 +534,14 @@ const Index = () => {
                     </span>
                   </div>
                 </div>
+                <p className="text-[#C49AA6] text-sm font-medium leading-snug px-1 italic">
+                  {p.quote}
+                </p>
                 <div className="flex flex-col gap-1.5 px-1">
                   {p.changes.map((c, j) => (
                     <div key={j} className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#C49AA6] shrink-0" />
-                      <span className="text-white/75 text-sm">{c}</span>
+                      <span className="text-white/60 text-xs">{c}</span>
                     </div>
                   ))}
                 </div>
