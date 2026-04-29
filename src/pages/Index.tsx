@@ -140,18 +140,24 @@ const Index = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-[#FAF7F5] text-[#2C2320]" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen bg-[#0D0A0B] text-[#F5EEE8]">
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen overflow-hidden bg-[#F3EEE9]">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#B07A8A]/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B07A8A]/8 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+      <section className="relative min-h-screen overflow-hidden bg-[#0D0A0B]">
+        {/* Фон — фото автора */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{ backgroundImage: "url('https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/7d93cc5d-27e5-4278-b67d-60d5765e2f6c.jpeg')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0D0A0B]/60 via-[#0D0A0B]/40 to-[#0D0A0B]" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8B1A4A]/15 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#C4748A]/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
 
         {/* Nav */}
         <nav className="relative z-10 flex items-center justify-between px-4 sm:px-6 md:px-12 py-5">
-          <div className="flex items-center gap-2 px-4 py-2 bg-white/80 ring-1 ring-[#B07A8A]/30 backdrop-blur rounded-full">
-            <Icon name="Brain" size={16} className="text-[#B07A8A]" />
-            <span className="font-semibold text-[#2C2320] text-sm tracking-wide">НЕЙРОФИТНЕС</span>
+          <div className="flex items-center gap-2 px-4 py-2 bg-white/5 ring-1 ring-white/20 backdrop-blur rounded-full">
+            <Icon name="Brain" size={16} className="text-[#C4748A]" />
+            <span className="font-semibold text-white text-sm tracking-widest uppercase" style={{fontFamily:"'Raleway',sans-serif"}}>Нейрофитнес</span>
           </div>
 
           <div className="hidden md:flex items-center gap-1">
@@ -164,7 +170,7 @@ const Index = () => {
               <button
                 key={item.label}
                 onClick={() => document.getElementById(item.anchor)?.scrollIntoView({ behavior: "smooth" })}
-                className="px-4 py-2 bg-white/70 ring-1 ring-[#B07A8A]/20 backdrop-blur rounded-full hover:bg-white transition-colors text-sm text-[#2C2320]"
+                className="px-4 py-2 bg-white/5 ring-1 ring-white/15 backdrop-blur rounded-full hover:bg-white/10 transition-colors text-sm text-white/80"
               >
                 {item.label}
               </button>
@@ -172,7 +178,7 @@ const Index = () => {
           </div>
 
           <Button
-            className="bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-full px-5 sm:px-6 text-sm font-semibold shadow-lg shadow-[#B07A8A]/25 min-h-[44px]"
+            className="bg-[#C4748A] hover:bg-[#A35570] text-white rounded-full px-5 sm:px-6 text-sm font-semibold shadow-lg shadow-[#C4748A]/30 min-h-[44px]"
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
             Вступить в клуб
@@ -183,23 +189,23 @@ const Index = () => {
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-80px)] px-4 sm:px-6 md:px-12 pb-10 pt-4">
           {/* Left */}
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B07A8A]/12 ring-1 ring-[#B07A8A]/35 rounded-full mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#B07A8A] animate-pulse" />
-              <span className="text-sm font-medium text-[#8C5C6B] tracking-wide">Онлайн-клуб для женщин 25–45</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4748A]/15 ring-1 ring-[#C4748A]/40 rounded-full mb-6">
+              <span className="w-2 h-2 rounded-full bg-[#C4748A] animate-pulse" />
+              <span className="text-sm font-medium text-[#E0A0B0] tracking-wide">Онлайн-клуб для женщин 25–45</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 text-[#2C2320] leading-none">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 text-white leading-none" style={{fontFamily:"'Playfair Display',serif"}}>
               НЕЙРО
-              <span className="text-[#B07A8A]">ФИТНЕС</span>
+              <span className="text-[#C4748A]">ФИТНЕС</span>
             </h1>
 
-            <p className="text-xl sm:text-2xl font-light text-[#2C2320] mb-3 leading-snug">
+            <p className="text-xl sm:text-2xl font-light text-white/90 mb-3 leading-snug" style={{fontFamily:"'Playfair Display',serif"}}>
               Перестань терпеть стресс.
               <br />
-              <span className="text-[#B07A8A]">Начни жить для себя.</span>
+              <span className="text-[#E0A0B0] italic">Начни жить для себя.</span>
             </p>
 
-            <p className="text-base sm:text-lg text-[#7A6A64] mb-5 leading-relaxed">
+            <p className="text-base sm:text-lg text-white/60 mb-5 leading-relaxed">
               За 30 дней ты избавишься от хронической тревоги, раскроешь женственность и наконец полюбишь себя — не когда похудеешь, а прямо сейчас.
             </p>
 
@@ -207,7 +213,7 @@ const Index = () => {
               {["БЕЗ ОПЫТА", "ОНЛАЙН", "РЕЗУЛЬТАТ ЗА 7 ДНЕЙ"].map((word) => (
                 <span
                   key={word}
-                  className="px-4 py-1.5 bg-white ring-2 ring-[#B07A8A]/50 text-[#8C5C6B] font-bold text-xs rounded-full tracking-widest"
+                  className="px-4 py-1.5 bg-white/5 ring-1 ring-[#C4748A]/50 text-[#E0A0B0] font-semibold text-xs rounded-full tracking-widest"
                 >
                   {word}
                 </span>
@@ -217,7 +223,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 size="lg"
-                className="bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-full px-8 py-4 text-base font-semibold shadow-xl shadow-[#B07A8A]/25 min-h-[52px] w-full sm:w-auto"
+                className="bg-[#C4748A] hover:bg-[#A35570] text-white rounded-full px-8 py-4 text-base font-semibold shadow-xl shadow-[#C4748A]/30 min-h-[52px] w-full sm:w-auto"
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Хочу в клуб — занять место
@@ -225,7 +231,7 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-[#B07A8A]/50 text-[#8C5C6B] hover:bg-[#B07A8A]/8 rounded-full px-8 py-4 text-base bg-transparent min-h-[52px] w-full sm:w-auto"
+                className="border border-white/20 text-white/80 hover:bg-white/5 rounded-full px-8 py-4 text-base bg-transparent min-h-[52px] w-full sm:w-auto"
                 onClick={() => document.getElementById("benefits")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Узнать подробнее
@@ -235,12 +241,12 @@ const Index = () => {
             {/* Social proof mini */}
             <div className="flex items-center gap-3 mt-6">
               <div className="flex -space-x-2">
-                {["#B07A8A", "#8C5C6B", "#C49AA6", "#D4A8B4"].map((c, i) => (
-                  <div key={i} className="w-8 h-8 rounded-full border-2 border-white" style={{ backgroundColor: c }} />
+                {["#C4748A", "#8B1A4A", "#E0A0B0", "#A35570"].map((c, i) => (
+                  <div key={i} className="w-8 h-8 rounded-full border-2 border-white/20" style={{ backgroundColor: c }} />
                 ))}
               </div>
-              <p className="text-sm text-[#7A6A64]">
-                <span className="font-bold text-[#2C2320]">200+ женщин</span> уже изменили свою жизнь
+              <p className="text-sm text-white/60">
+                <span className="font-bold text-white">200+ женщин</span> уже изменили свою жизнь
               </p>
             </div>
           </div>
@@ -277,13 +283,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── PAIN POINTS (ATTENTION→INTEREST) ── */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-12 bg-[#2C2320]">
+      {/* ── PAIN POINTS ── */}
+      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-12 bg-[#100C0D]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 leading-tight" style={{fontFamily:"'Playfair Display',serif"}}>
             Узнаёшь себя?
           </h2>
-          <p className="text-white/60 mb-10 text-base sm:text-lg">Если хотя бы 3 пункта — это про тебя, ты попала по адресу</p>
+          <p className="text-white/50 mb-10 text-base sm:text-lg">Если хотя бы 3 пункта — это про тебя, ты попала по адресу</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left">
             {[
               "Засыпаешь с тревогой, просыпаешься без сил",
@@ -293,34 +299,34 @@ const Index = () => {
               "Живёшь по инерции — без радости и смысла",
               "Хочешь перемен, но не знаешь с чего начать",
             ].map((pain, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white/5 rounded-xl px-4 py-4">
-                <div className="w-5 h-5 rounded-full bg-[#B07A8A]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Icon name="Check" size={11} className="text-[#C49AA6]" />
+              <div key={i} className="flex items-start gap-3 bg-white/4 ring-1 ring-white/8 rounded-2xl px-4 py-4">
+                <div className="w-5 h-5 rounded-full bg-[#C4748A]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Icon name="Check" size={11} className="text-[#E0A0B0]" />
                 </div>
-                <span className="text-white/80 text-sm sm:text-base">{pain}</span>
+                <span className="text-white/75 text-sm sm:text-base">{pain}</span>
               </div>
             ))}
           </div>
-          <p className="mt-8 text-[#C49AA6] font-semibold text-lg">
+          <p className="mt-8 text-[#E0A0B0] font-semibold text-lg" style={{fontFamily:"'Playfair Display',serif"}}>
             Ты заслуживаешь жить иначе. И это возможно.
           </p>
         </div>
       </section>
 
       {/* ── BENEFITS ── */}
-      <section id="benefits" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#FAF7F5] overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#B07A8A]/5 rounded-full blur-3xl pointer-events-none" />
+      <section id="benefits" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#0D0A0B] overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#8B1A4A]/8 rounded-full blur-3xl pointer-events-none" />
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B07A8A]/10 ring-1 ring-[#B07A8A]/25 rounded-full mb-5">
-              <Icon name="Sparkles" size={14} className="text-[#8C5C6B]" />
-              <span className="text-sm font-medium text-[#8C5C6B]">Конкретные результаты</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4748A]/10 ring-1 ring-[#C4748A]/25 rounded-full mb-5">
+              <Icon name="Sparkles" size={14} className="text-[#E0A0B0]" />
+              <span className="text-sm font-medium text-[#E0A0B0]">Конкретные результаты</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#2C2320] mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4" style={{fontFamily:"'Playfair Display',serif"}}>
               Что ты получишь
-              <span className="text-[#B07A8A]"> в клубе</span>
+              <span className="text-[#C4748A]"> в клубе</span>
             </h2>
-            <p className="text-base sm:text-lg text-[#7A6A64] max-w-xl mx-auto">
+            <p className="text-base sm:text-lg text-white/50 max-w-xl mx-auto">
               Не абстрактный «личностный рост» — а конкретные изменения с измеримым результатом
             </p>
           </div>
@@ -329,16 +335,16 @@ const Index = () => {
             {benefits.map((b, i) => (
               <div
                 key={i}
-                className="group rounded-2xl bg-white ring-1 ring-[#B07A8A]/15 p-6 sm:p-8 hover:ring-[#B07A8A]/40 hover:shadow-lg hover:shadow-[#B07A8A]/8 transition-all"
+                className="group rounded-2xl bg-white/4 ring-1 ring-white/10 p-6 sm:p-8 hover:ring-[#C4748A]/40 hover:bg-white/6 transition-all"
               >
                 <div className="flex items-start justify-between mb-5">
-                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-[#B07A8A]/10 ring-1 ring-[#B07A8A]/25 group-hover:bg-[#B07A8A]/18 transition-colors">
-                    <Icon name={b.icon} size={20} className="text-[#8C5C6B]" />
+                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-[#C4748A]/15 ring-1 ring-[#C4748A]/25">
+                    <Icon name={b.icon} size={20} className="text-[#E0A0B0]" />
                   </div>
-                  <span className="text-xs font-bold text-[#B07A8A] bg-[#B07A8A]/10 px-3 py-1 rounded-full">{b.result}</span>
+                  <span className="text-xs font-bold text-[#C4748A] bg-[#C4748A]/10 px-3 py-1 rounded-full">{b.result}</span>
                 </div>
-                <h3 className="text-base font-bold mb-2 text-[#2C2320] leading-snug">{b.title}</h3>
-                <p className="text-[#7A6A64] leading-relaxed text-sm">{b.desc}</p>
+                <h3 className="text-base font-bold mb-2 text-white leading-snug" style={{fontFamily:"'Playfair Display',serif"}}>{b.title}</h3>
+                <p className="text-white/50 leading-relaxed text-sm">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -346,7 +352,7 @@ const Index = () => {
           <div className="mt-10 text-center">
             <Button
               size="lg"
-              className="bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-full px-10 font-semibold shadow-xl shadow-[#B07A8A]/25 min-h-[52px]"
+              className="bg-[#C4748A] hover:bg-[#A35570] text-white rounded-full px-10 font-semibold shadow-xl shadow-[#C4748A]/25 min-h-[52px]"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Хочу эти результаты — записаться
@@ -356,22 +362,21 @@ const Index = () => {
       </section>
 
       {/* ── AUTHOR ── */}
-      <section id="author" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#F3EEE9] overflow-hidden">
+      <section id="author" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#100C0D] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute right-0 top-0 w-80 h-80 bg-[#B07A8A]/8 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute right-0 top-0 w-80 h-80 bg-[#8B1A4A]/12 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Фото */}
             <div className="relative order-1 lg:order-1">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#B07A8A]/15 to-transparent rounded-3xl transform -rotate-2" />
               <img
-                src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/413ab4b9-44bb-4e99-a81b-79ee338da27d.jpeg"
+                src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/7d93cc5d-27e5-4278-b67d-60d5765e2f6c.jpeg"
                 alt="Ирина Абрамова"
-                className="relative z-10 w-full max-w-xs sm:max-w-sm mx-auto rounded-3xl object-cover shadow-2xl shadow-[#B07A8A]/12"
+                className="relative z-10 w-full max-w-xs sm:max-w-sm mx-auto rounded-3xl object-cover shadow-2xl shadow-[#C4748A]/20"
                 style={{ aspectRatio: "2/3", objectPosition: "center top" }}
               />
-              <div className="absolute z-20 -top-3 -right-2 sm:-right-4 bg-[#B07A8A] text-white rounded-2xl shadow-xl px-4 py-3">
+              <div className="absolute z-20 -top-3 -right-2 sm:-right-4 bg-[#C4748A] text-white rounded-2xl shadow-xl px-4 py-3">
                 <p className="text-xs font-medium opacity-80 mb-0.5">Опыт</p>
                 <p className="text-xl font-black">10+ лет</p>
               </div>
@@ -379,17 +384,17 @@ const Index = () => {
 
             {/* Текст */}
             <div className="order-2">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white ring-1 ring-[#B07A8A]/25 rounded-full mb-6">
-                <Icon name="Quote" size={14} className="text-[#B07A8A]" />
-                <span className="text-sm font-medium text-[#8C5C6B]">Твой проводник</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 ring-1 ring-[#C4748A]/30 rounded-full mb-6">
+                <Icon name="Quote" size={14} className="text-[#C4748A]" />
+                <span className="text-sm font-medium text-[#E0A0B0]">Твой проводник</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#2C2320] mb-4 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 leading-tight" style={{fontFamily:"'Playfair Display',serif"}}>
                 Абрамова Ирина
-                <span className="block text-[#B07A8A] text-xl sm:text-2xl font-light mt-1">Психолог · Энерготерапевт · Расстановщик</span>
+                <span className="block text-[#C4748A] text-xl sm:text-2xl font-light mt-1 italic">Психолог · Энерготерапевт · Расстановщик</span>
               </h2>
 
-              <blockquote className="text-lg sm:text-xl md:text-2xl font-light text-[#2C2320] leading-relaxed mb-6 text-pretty border-l-4 border-[#B07A8A] pl-5">
+              <blockquote className="text-lg sm:text-xl font-light text-white/80 leading-relaxed mb-6 border-l-4 border-[#C4748A] pl-5 italic" style={{fontFamily:"'Playfair Display',serif"}}>
                 "Я знаю, каково это — жить в постоянном стрессе и не узнавать себя в зеркале. Я прошла этот путь сама и помогла пройти 200+ женщинам."
               </blockquote>
 
@@ -401,15 +406,15 @@ const Index = () => {
                   "Спикер женских форумов и ретритов",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[#B07A8A] flex items-center justify-center flex-shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-[#C4748A] flex items-center justify-center flex-shrink-0">
                       <Icon name="Check" size={11} className="text-white" />
                     </div>
-                    <span className="text-sm sm:text-base text-[#7A6A64]">{item}</span>
+                    <span className="text-sm sm:text-base text-white/60">{item}</span>
                   </div>
                 ))}
               </div>
 
-              <p className="text-[#7A6A64] leading-relaxed text-sm sm:text-base">
+              <p className="text-white/50 leading-relaxed text-sm sm:text-base">
                 Я не просто психолог — я женщина, которая однажды решила жить по-другому. И теперь хочу помочь тебе сделать то же самое — быстро, практично, с любовью к себе.
               </p>
             </div>
@@ -418,19 +423,19 @@ const Index = () => {
       </section>
 
       {/* ── COMMUNITY ── */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#FAF7F5] overflow-hidden">
+      <section className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#0D0A0B] overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B07A8A]/10 ring-1 ring-[#B07A8A]/25 rounded-full mb-6">
-                <Icon name="Heart" size={14} className="text-[#8C5C6B]" />
-                <span className="text-sm font-medium text-[#8C5C6B]">Сообщество</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4748A]/10 ring-1 ring-[#C4748A]/25 rounded-full mb-6">
+                <Icon name="Heart" size={14} className="text-[#E0A0B0]" />
+                <span className="text-sm font-medium text-[#E0A0B0]">Сообщество</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#2C2320] mb-5 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-5 leading-tight" style={{fontFamily:"'Playfair Display',serif"}}>
                 Ты не одна —<br />
-                <span className="text-[#B07A8A]">мы вместе</span>
+                <span className="text-[#C4748A]">мы вместе</span>
               </h2>
-              <p className="text-base sm:text-lg text-[#7A6A64] leading-relaxed mb-7">
+              <p className="text-base sm:text-lg text-white/55 leading-relaxed mb-7">
                 200+ женщин уже в клубе. Они поддерживают, понимают без слов и радуются твоим победам как своим. Здесь не бросают начатое — доводят до конца с любовью.
               </p>
 
@@ -442,17 +447,17 @@ const Index = () => {
                   { icon: "BookOpen", text: "Библиотека материалов только для участниц" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#B07A8A]/12 flex items-center justify-center flex-shrink-0">
-                      <Icon name={item.icon} size={15} className="text-[#B07A8A]" />
+                    <div className="w-8 h-8 rounded-full bg-[#C4748A]/15 flex items-center justify-center flex-shrink-0">
+                      <Icon name={item.icon} size={15} className="text-[#C4748A]" />
                     </div>
-                    <span className="text-sm sm:text-base text-[#7A6A64]">{item.text}</span>
+                    <span className="text-sm sm:text-base text-white/65">{item.text}</span>
                   </div>
                 ))}
               </div>
 
               <Button
                 size="lg"
-                className="bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-full px-10 font-semibold shadow-lg shadow-[#B07A8A]/25 min-h-[52px] w-full sm:w-auto"
+                className="bg-[#C4748A] hover:bg-[#A35570] text-white rounded-full px-10 font-semibold shadow-lg shadow-[#C4748A]/25 min-h-[52px] w-full sm:w-auto"
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Стать участницей клуба
@@ -460,11 +465,10 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#B07A8A]/12 to-transparent rounded-3xl transform rotate-2" />
               <img
                 src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/96ea61d4-81d8-4d37-8125-9586a57aa74b.jpeg"
                 alt="Участницы клуба вместе"
-                className="relative z-10 w-full rounded-3xl object-cover shadow-2xl shadow-[#B07A8A]/12"
+                className="relative z-10 w-full rounded-3xl object-cover shadow-2xl shadow-[#C4748A]/15"
                 style={{ aspectRatio: "3/4", objectPosition: "center 20%" }}
               />
             </div>
