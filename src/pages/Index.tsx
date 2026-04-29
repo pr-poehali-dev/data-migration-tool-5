@@ -3,6 +3,14 @@ import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import Icon from "@/components/ui/icon"
 
+// Палитра: серо-розовая, богатая, сдержанная
+// --bg-main:    #FAF7F5   — тёплый молочный фон
+// --bg-alt:     #F3EEE9   — чуть темнее, пудровый
+// --accent:     #B07A8A   — пыльная роза (основной акцент)
+// --accent-dk:  #8C5C6B   — тёмная роза (hover)
+// --text-main:  #2C2320   — почти чёрный шоколад
+// --text-muted: #7A6A64   — тёплый серо-коричневый
+
 interface FAQ {
   question: string
   answer: string
@@ -77,19 +85,19 @@ const Index = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-white text-[#1a2a2a]" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen bg-[#FAF7F5] text-[#2C2320]" style={{ fontFamily: "'Inter', sans-serif" }}>
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen overflow-hidden bg-[#f0fafa]">
-        {/* Декоративные круги */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#2ABCB4]/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#2ABCB4]/8 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+      <section className="relative min-h-screen overflow-hidden bg-[#F3EEE9]">
+        {/* Декоративные круги — пудрово-розовые */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#B07A8A]/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#B07A8A]/8 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />
 
         {/* Nav */}
         <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6">
-          <div className="flex items-center gap-2 px-4 py-2 bg-white/70 ring-1 ring-[#2ABCB4]/40 backdrop-blur rounded-full">
-            <Icon name="Brain" size={17} className="text-[#2ABCB4]" />
-            <span className="font-semibold text-[#1a2a2a] text-sm tracking-wide">НЕЙРОФИТНЕС</span>
+          <div className="flex items-center gap-2 px-4 py-2 bg-white/80 ring-1 ring-[#B07A8A]/30 backdrop-blur rounded-full">
+            <Icon name="Brain" size={17} className="text-[#B07A8A]" />
+            <span className="font-semibold text-[#2C2320] text-sm tracking-wide">НЕЙРОФИТНЕС</span>
           </div>
 
           <div className="hidden md:flex items-center gap-1">
@@ -97,7 +105,7 @@ const Index = () => {
               <a
                 key={item}
                 href="#"
-                className="px-4 py-2 bg-white/60 ring-1 ring-[#2ABCB4]/30 backdrop-blur rounded-full hover:bg-white transition-colors text-sm text-[#1a2a2a]"
+                className="px-4 py-2 bg-white/70 ring-1 ring-[#B07A8A]/20 backdrop-blur rounded-full hover:bg-white transition-colors text-sm text-[#2C2320]"
               >
                 {item}
               </a>
@@ -105,7 +113,7 @@ const Index = () => {
           </div>
 
           <Button
-            className="bg-[#2ABCB4] hover:bg-[#1fa8a0] text-white rounded-full px-6 font-medium shadow-lg shadow-[#2ABCB4]/30"
+            className="bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-full px-6 font-medium shadow-lg shadow-[#B07A8A]/25"
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
             Вступить в клуб
@@ -116,21 +124,21 @@ const Index = () => {
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-96px)] px-6 md:px-12 pb-12">
           {/* Left */}
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2ABCB4]/15 ring-1 ring-[#2ABCB4]/40 rounded-full mb-8">
-              <span className="w-2 h-2 rounded-full bg-[#2ABCB4] animate-pulse" />
-              <span className="text-sm font-medium text-[#0a7a74] tracking-wide">Онлайн-клуб для женщин</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B07A8A]/12 ring-1 ring-[#B07A8A]/35 rounded-full mb-8">
+              <span className="w-2 h-2 rounded-full bg-[#B07A8A] animate-pulse" />
+              <span className="text-sm font-medium text-[#8C5C6B] tracking-wide">Онлайн-клуб для женщин</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-4 text-[#1a2a2a] leading-none">
+            <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-4 text-[#2C2320] leading-none">
               НЕЙРО
-              <span className="text-[#2ABCB4]">ФИТНЕС</span>
+              <span className="text-[#B07A8A]">ФИТНЕС</span>
             </h1>
 
-            <p className="text-xl md:text-2xl font-light text-[#4a6060] mb-3 leading-snug">
+            <p className="text-xl md:text-2xl font-light text-[#7A6A64] mb-3 leading-snug">
               Это то, что создаст тебе больше.
             </p>
 
-            <p className="text-lg text-[#4a6060] mb-4 leading-relaxed">
+            <p className="text-lg text-[#7A6A64] mb-4 leading-relaxed">
               Любовь к себе на всех уровнях:
             </p>
 
@@ -138,21 +146,21 @@ const Index = () => {
               {["ТЕЛО", "ДУША", "РАЗУМ"].map((word) => (
                 <span
                   key={word}
-                  className="px-5 py-2 bg-white ring-2 ring-[#2ABCB4] text-[#0a7a74] font-bold text-sm rounded-full tracking-widest"
+                  className="px-5 py-2 bg-white ring-2 ring-[#B07A8A]/50 text-[#8C5C6B] font-bold text-sm rounded-full tracking-widest"
                 >
                   {word}
                 </span>
               ))}
             </div>
 
-            <p className="text-[#4a6060] leading-relaxed mb-10 max-w-lg text-pretty">
+            <p className="text-[#7A6A64] leading-relaxed mb-10 max-w-lg text-pretty">
               Мой опыт показывает, что страх часто мешал мне двигаться вперёд. Но преодолев страхи и сомнения, я добилась значительных результатов. Я начала смотреть на новые вызовы как на возможности для роста — и хочу помочь тебе сделать то же самое.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-[#2ABCB4] hover:bg-[#1fa8a0] text-white rounded-full px-10 py-4 text-lg font-semibold shadow-xl shadow-[#2ABCB4]/30"
+                className="bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-full px-10 py-4 text-lg font-semibold shadow-xl shadow-[#B07A8A]/25"
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Вступить в клуб
@@ -160,7 +168,7 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-[#2ABCB4] text-[#0a7a74] hover:bg-[#2ABCB4]/10 rounded-full px-10 py-4 text-lg bg-transparent"
+                className="border-2 border-[#B07A8A]/50 text-[#8C5C6B] hover:bg-[#B07A8A]/8 rounded-full px-10 py-4 text-lg bg-transparent"
                 onClick={() => document.getElementById("benefits")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Узнать больше
@@ -168,27 +176,26 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Right — фото медитация */}
+          {/* Right — место для фото */}
           <div className="relative flex justify-center">
             <div className="relative w-full max-w-lg">
-              {/* Декоративный фон */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2ABCB4]/20 to-[#2ABCB4]/5 rounded-3xl transform rotate-3" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#B07A8A]/15 to-[#B07A8A]/5 rounded-3xl transform rotate-3" />
               <img
                 src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/ded87f46-96c4-4ed5-9f7b-478adf539d98.jpg"
-                alt="Медитация — женщины в позе лотоса"
-                className="relative z-10 w-full rounded-3xl object-cover shadow-2xl shadow-[#2ABCB4]/20"
+                alt="Медитация"
+                className="relative z-10 w-full rounded-3xl object-cover shadow-2xl shadow-[#B07A8A]/15"
                 style={{ aspectRatio: "1/1" }}
               />
               {/* Floating badge */}
-              <div className="absolute z-20 -bottom-4 -left-4 bg-white rounded-2xl shadow-xl px-5 py-4 ring-1 ring-[#2ABCB4]/20">
-                <p className="text-xs text-[#4a6060] mb-1">Уже в клубе</p>
+              <div className="absolute z-20 -bottom-4 -left-4 bg-white rounded-2xl shadow-xl px-5 py-4 ring-1 ring-[#B07A8A]/15">
+                <p className="text-xs text-[#7A6A64] mb-1">Уже в клубе</p>
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
-                    {["#2ABCB4", "#0a7a74", "#4a9090"].map((c, i) => (
+                    {["#B07A8A", "#8C5C6B", "#C49AA6"].map((c, i) => (
                       <div key={i} className="w-7 h-7 rounded-full border-2 border-white" style={{ backgroundColor: c }} />
                     ))}
                   </div>
-                  <span className="font-bold text-[#1a2a2a] text-sm">100+ женщин</span>
+                  <span className="font-bold text-[#2C2320] text-sm">100+ женщин</span>
                 </div>
               </div>
             </div>
@@ -197,19 +204,19 @@ const Index = () => {
       </section>
 
       {/* ── BENEFITS ── */}
-      <section id="benefits" className="relative py-24 px-6 md:px-12 bg-white overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#2ABCB4]/5 rounded-full blur-3xl pointer-events-none" />
+      <section id="benefits" className="relative py-24 px-6 md:px-12 bg-[#FAF7F5] overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#B07A8A]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2ABCB4]/10 ring-1 ring-[#2ABCB4]/30 rounded-full mb-6">
-              <Icon name="Sparkles" size={14} className="text-[#0a7a74]" />
-              <span className="text-sm font-medium text-[#0a7a74]">Что тебя ждёт в проекте</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B07A8A]/10 ring-1 ring-[#B07A8A]/25 rounded-full mb-6">
+              <Icon name="Sparkles" size={14} className="text-[#8C5C6B]" />
+              <span className="text-sm font-medium text-[#8C5C6B]">Что тебя ждёт в проекте</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[#1a2a2a] mb-4">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[#2C2320] mb-4">
               В НЕЙРОФИТНЕС
-              <span className="text-[#2ABCB4]"> будет</span>
+              <span className="text-[#B07A8A]"> будет</span>
             </h2>
-            <p className="text-lg text-[#4a6060] max-w-xl mx-auto">
+            <p className="text-lg text-[#7A6A64] max-w-xl mx-auto">
               Шесть направлений, которые изменят твою жизнь изнутри
             </p>
           </div>
@@ -218,13 +225,13 @@ const Index = () => {
             {benefits.map((b, i) => (
               <div
                 key={i}
-                className="group rounded-2xl bg-[#f0fafa] ring-1 ring-[#2ABCB4]/20 p-8 hover:ring-[#2ABCB4]/50 hover:shadow-lg hover:shadow-[#2ABCB4]/10 transition-all"
+                className="group rounded-2xl bg-white ring-1 ring-[#B07A8A]/15 p-8 hover:ring-[#B07A8A]/40 hover:shadow-lg hover:shadow-[#B07A8A]/8 transition-all"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#2ABCB4]/15 ring-1 ring-[#2ABCB4]/30 mb-6 group-hover:bg-[#2ABCB4]/25 transition-colors">
-                  <Icon name={b.icon} size={22} className="text-[#0a7a74]" />
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#B07A8A]/10 ring-1 ring-[#B07A8A]/25 mb-6 group-hover:bg-[#B07A8A]/18 transition-colors">
+                  <Icon name={b.icon} size={22} className="text-[#8C5C6B]" />
                 </div>
-                <h3 className="text-lg font-bold mb-3 text-[#1a2a2a]">{b.title}</h3>
-                <p className="text-[#4a6060] leading-relaxed text-sm">{b.desc}</p>
+                <h3 className="text-lg font-bold mb-3 text-[#2C2320]">{b.title}</h3>
+                <p className="text-[#7A6A64] leading-relaxed text-sm">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -232,23 +239,22 @@ const Index = () => {
       </section>
 
       {/* ── AUTHOR QUOTE ── */}
-      <section className="relative py-24 px-6 md:px-12 bg-[#f0fafa] overflow-hidden">
+      <section className="relative py-24 px-6 md:px-12 bg-[#F3EEE9] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute right-0 top-0 w-96 h-96 bg-[#2ABCB4]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute right-0 top-0 w-96 h-96 bg-[#B07A8A]/8 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Фото автора */}
             <div className="relative order-2 lg:order-1">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2ABCB4]/20 to-transparent rounded-3xl transform -rotate-2" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#B07A8A]/15 to-transparent rounded-3xl transform -rotate-2" />
               <img
                 src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/41ce2e9f-3fec-49b4-b58a-1894dffc6bf1.jpg"
                 alt="Автор проекта"
-                className="relative z-10 w-full max-w-md mx-auto rounded-3xl object-cover shadow-2xl shadow-[#2ABCB4]/15"
+                className="relative z-10 w-full max-w-md mx-auto rounded-3xl object-cover shadow-2xl shadow-[#B07A8A]/12"
                 style={{ aspectRatio: "1/1" }}
               />
-              {/* Badge */}
-              <div className="absolute z-20 -top-4 -right-4 bg-[#2ABCB4] text-white rounded-2xl shadow-xl px-5 py-4">
+              <div className="absolute z-20 -top-4 -right-4 bg-[#B07A8A] text-white rounded-2xl shadow-xl px-5 py-4">
                 <p className="text-xs font-medium opacity-80 mb-1">Опыт работы</p>
                 <p className="text-2xl font-black">10+ лет</p>
               </div>
@@ -256,26 +262,26 @@ const Index = () => {
 
             {/* Текст */}
             <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white ring-1 ring-[#2ABCB4]/30 rounded-full mb-8">
-                <Icon name="Quote" size={14} className="text-[#2ABCB4]" />
-                <span className="text-sm font-medium text-[#0a7a74]">Слово автора</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white ring-1 ring-[#B07A8A]/25 rounded-full mb-8">
+                <Icon name="Quote" size={14} className="text-[#B07A8A]" />
+                <span className="text-sm font-medium text-[#8C5C6B]">Слово автора</span>
               </div>
 
-              <blockquote className="text-2xl md:text-3xl font-light text-[#1a2a2a] leading-relaxed mb-8 text-pretty">
+              <blockquote className="text-2xl md:text-3xl font-light text-[#2C2320] leading-relaxed mb-8 text-pretty">
                 "Страх часто мешал мне двигаться вперёд. Но я осознала — только преодолев страхи и сомнения, я смогла добиться значительных результатов."
               </blockquote>
 
-              <p className="text-[#4a6060] leading-relaxed mb-8">
+              <p className="text-[#7A6A64] leading-relaxed mb-8">
                 Постепенно набираясь опыта и уверенности, я начала смотреть на новые вызовы как на возможности для роста, а не препятствия. Теперь я хочу пройти этот путь вместе с тобой.
               </p>
 
-              <div className="flex items-center gap-4 p-5 bg-white rounded-2xl ring-1 ring-[#2ABCB4]/20">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#2ABCB4] to-[#0a7a74] flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+              <div className="flex items-center gap-4 p-5 bg-white rounded-2xl ring-1 ring-[#B07A8A]/20">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#B07A8A] to-[#8C5C6B] flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
                   И
                 </div>
                 <div>
-                  <p className="font-bold text-[#1a2a2a]">Абрамова Ирина</p>
-                  <p className="text-sm text-[#4a6060]">Психолог · Автор проекта НЕЙРОФИТНЕС</p>
+                  <p className="font-bold text-[#2C2320]">Абрамова Ирина</p>
+                  <p className="text-sm text-[#7A6A64]">Психолог · Автор проекта НЕЙРОФИТНЕС</p>
                 </div>
               </div>
             </div>
@@ -284,19 +290,19 @@ const Index = () => {
       </section>
 
       {/* ── COMMUNITY ── */}
-      <section className="relative py-24 px-6 md:px-12 bg-white overflow-hidden">
+      <section className="relative py-24 px-6 md:px-12 bg-[#FAF7F5] overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2ABCB4]/10 ring-1 ring-[#2ABCB4]/30 rounded-full mb-8">
-                <Icon name="Heart" size={14} className="text-[#0a7a74]" />
-                <span className="text-sm font-medium text-[#0a7a74]">Сообщество</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B07A8A]/10 ring-1 ring-[#B07A8A]/25 rounded-full mb-8">
+                <Icon name="Heart" size={14} className="text-[#8C5C6B]" />
+                <span className="text-sm font-medium text-[#8C5C6B]">Сообщество</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[#1a2a2a] mb-6">
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[#2C2320] mb-6">
                 Ты не одна —<br />
-                <span className="text-[#2ABCB4]">мы вместе</span>
+                <span className="text-[#B07A8A]">мы вместе</span>
               </h2>
-              <p className="text-lg text-[#4a6060] leading-relaxed mb-8">
+              <p className="text-lg text-[#7A6A64] leading-relaxed mb-8">
                 В НЕЙРОФИТНЕС ты обретёшь единомышленниц — женщин, которые тоже выбирают рост, любовь к себе и движение к мечте. Здесь не бросают начатое. Здесь доводят до конца — с теплом и поддержкой.
               </p>
 
@@ -308,17 +314,17 @@ const Index = () => {
                   "Доступ к эксклюзивным материалам клуба",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#2ABCB4] flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 rounded-full bg-[#B07A8A] flex items-center justify-center flex-shrink-0">
                       <Icon name="Check" size={13} className="text-white" />
                     </div>
-                    <span className="text-[#4a6060]">{item}</span>
+                    <span className="text-[#7A6A64]">{item}</span>
                   </div>
                 ))}
               </div>
 
               <Button
                 size="lg"
-                className="bg-[#2ABCB4] hover:bg-[#1fa8a0] text-white rounded-full px-10 font-semibold shadow-lg shadow-[#2ABCB4]/30"
+                className="bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-full px-10 font-semibold shadow-lg shadow-[#B07A8A]/25"
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Стать участницей
@@ -326,11 +332,11 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2ABCB4]/15 to-transparent rounded-3xl transform rotate-2" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#B07A8A]/12 to-transparent rounded-3xl transform rotate-2" />
               <img
                 src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/a49d1bfb-ce7a-42b6-b7b9-b3f3ad5ff6ee.jpg"
                 alt="Сообщество женщин"
-                className="relative z-10 w-full rounded-3xl object-cover shadow-2xl shadow-[#2ABCB4]/15"
+                className="relative z-10 w-full rounded-3xl object-cover shadow-2xl shadow-[#B07A8A]/12"
                 style={{ aspectRatio: "1/1" }}
               />
             </div>
@@ -339,32 +345,32 @@ const Index = () => {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="relative py-24 px-6 md:px-12 bg-[#f0fafa]">
+      <section className="relative py-24 px-6 md:px-12 bg-[#F3EEE9]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[#1a2a2a] mb-4">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[#2C2320] mb-4">
               Частые вопросы
             </h2>
-            <p className="text-lg text-[#4a6060]">Всё, что важно знать перед вступлением в клуб</p>
+            <p className="text-lg text-[#7A6A64]">Всё, что важно знать перед вступлением в клуб</p>
           </div>
 
           <div className="space-y-3">
             {faqs.map((faq, index) => (
-              <div key={index} className="rounded-2xl bg-white ring-1 ring-[#2ABCB4]/20 overflow-hidden shadow-sm hover:ring-[#2ABCB4]/40 transition-all">
+              <div key={index} className="rounded-2xl bg-white ring-1 ring-[#B07A8A]/15 overflow-hidden shadow-sm hover:ring-[#B07A8A]/35 transition-all">
                 <button
-                  className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-[#f0fafa] transition-colors"
+                  className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-[#FAF7F5] transition-colors"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h3 className="text-base font-semibold pr-4 text-[#1a2a2a]">{faq.question}</h3>
+                  <h3 className="text-base font-semibold pr-4 text-[#2C2320]">{faq.question}</h3>
                   {openFaq === index ? (
-                    <Minus className="w-5 h-5 flex-shrink-0 text-[#2ABCB4]" />
+                    <Minus className="w-5 h-5 flex-shrink-0 text-[#B07A8A]" />
                   ) : (
-                    <Plus className="w-5 h-5 flex-shrink-0 text-[#2ABCB4]" />
+                    <Plus className="w-5 h-5 flex-shrink-0 text-[#B07A8A]" />
                   )}
                 </button>
                 {openFaq === index && (
                   <div className="px-6 pb-6">
-                    <p className="text-[#4a6060] leading-relaxed text-sm">{faq.answer}</p>
+                    <p className="text-[#7A6A64] leading-relaxed text-sm">{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -374,55 +380,55 @@ const Index = () => {
       </section>
 
       {/* ── CONTACT / CTA ── */}
-      <section id="contact" className="relative py-24 px-6 md:px-12 bg-white overflow-hidden">
+      <section id="contact" className="relative py-24 px-6 md:px-12 bg-[#FAF7F5] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#2ABCB4]/8 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#2ABCB4]/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#B07A8A]/8 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#B07A8A]/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
         </div>
         <div className="relative max-w-7xl mx-auto">
-          <div className="rounded-3xl bg-[#f0fafa] ring-1 ring-[#2ABCB4]/30 p-8 md:p-14 shadow-sm">
+          <div className="rounded-3xl bg-[#F3EEE9] ring-1 ring-[#B07A8A]/20 p-8 md:p-14 shadow-sm">
             <div className="text-center mb-14">
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[#1a2a2a] mb-4">
-                Вступить в <span className="text-[#2ABCB4]">НЕЙРОФИТНЕС</span>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[#2C2320] mb-4">
+                Вступить в <span className="text-[#B07A8A]">НЕЙРОФИТНЕС</span>
               </h2>
-              <p className="text-xl text-[#4a6060] max-w-xl mx-auto">
+              <p className="text-xl text-[#7A6A64] max-w-xl mx-auto">
                 Оставь заявку — я свяжусь с тобой и расскажу всё о ближайшем старте.
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               {/* Форма */}
-              <div className="bg-white rounded-2xl ring-1 ring-[#2ABCB4]/20 p-8 shadow-sm">
-                <h3 className="text-2xl font-bold mb-6 text-[#1a2a2a]">Оставить заявку</h3>
+              <div className="bg-white rounded-2xl ring-1 ring-[#B07A8A]/15 p-8 shadow-sm">
+                <h3 className="text-2xl font-bold mb-6 text-[#2C2320]">Оставить заявку</h3>
                 <form className="space-y-5">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-[#1a2a2a]">Имя</label>
+                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-[#2C2320]">Имя</label>
                     <input
                       type="text"
                       id="name"
-                      className="w-full px-4 py-3 rounded-xl border-2 border-[#2ABCB4]/20 focus:border-[#2ABCB4] focus:ring-0 outline-none bg-[#f0fafa] text-[#1a2a2a] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-[#B07A8A]/20 focus:border-[#B07A8A] focus:ring-0 outline-none bg-[#FAF7F5] text-[#2C2320] transition-colors placeholder:text-[#7A6A64]/50"
                       placeholder="Твоё имя"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2 text-[#1a2a2a]">Телефон или WhatsApp</label>
+                    <label htmlFor="phone" className="block text-sm font-medium mb-2 text-[#2C2320]">Телефон или WhatsApp</label>
                     <input
                       type="tel"
                       id="phone"
-                      className="w-full px-4 py-3 rounded-xl border-2 border-[#2ABCB4]/20 focus:border-[#2ABCB4] focus:ring-0 outline-none bg-[#f0fafa] text-[#1a2a2a] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-[#B07A8A]/20 focus:border-[#B07A8A] focus:ring-0 outline-none bg-[#FAF7F5] text-[#2C2320] transition-colors placeholder:text-[#7A6A64]/50"
                       placeholder="+7 (___) ___-__-__"
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2 text-[#1a2a2a]">Расскажи о себе</label>
+                    <label htmlFor="message" className="block text-sm font-medium mb-2 text-[#2C2320]">Расскажи о себе</label>
                     <textarea
                       id="message"
                       rows={4}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-[#2ABCB4]/20 focus:border-[#2ABCB4] focus:ring-0 outline-none resize-none bg-[#f0fafa] text-[#1a2a2a] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-[#B07A8A]/20 focus:border-[#B07A8A] focus:ring-0 outline-none resize-none bg-[#FAF7F5] text-[#2C2320] transition-colors placeholder:text-[#7A6A64]/50"
                       placeholder="Чего ты хочешь достичь с НЕЙРОФИТНЕС?"
                     />
                   </div>
-                  <Button className="w-full bg-[#2ABCB4] hover:bg-[#1fa8a0] text-white rounded-xl py-4 font-semibold text-base shadow-lg shadow-[#2ABCB4]/30">
+                  <Button className="w-full bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-xl py-4 font-semibold text-base shadow-lg shadow-[#B07A8A]/25">
                     Отправить заявку
                   </Button>
                 </form>
@@ -437,9 +443,9 @@ const Index = () => {
                     { icon: "Users", text: "Камерная группа — максимум внимания каждой" },
                     { icon: "Phone", text: "+7 951 140-83-63" },
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 text-[#4a6060]">
-                      <div className="w-9 h-9 rounded-full bg-[#2ABCB4]/15 flex items-center justify-center flex-shrink-0">
-                        <Icon name={item.icon} size={15} className="text-[#2ABCB4]" />
+                    <div key={i} className="flex items-center gap-3 text-[#7A6A64]">
+                      <div className="w-9 h-9 rounded-full bg-[#B07A8A]/12 flex items-center justify-center flex-shrink-0">
+                        <Icon name={item.icon} size={15} className="text-[#B07A8A]" />
                       </div>
                       <span>{item.text}</span>
                     </div>
@@ -447,7 +453,7 @@ const Index = () => {
                 </div>
 
                 {/* Карточка автора */}
-                <div className="rounded-2xl bg-white ring-1 ring-[#2ABCB4]/20 overflow-hidden shadow-sm">
+                <div className="rounded-2xl bg-white ring-1 ring-[#B07A8A]/15 overflow-hidden shadow-sm">
                   <div className="w-full h-64 overflow-hidden">
                     <img
                       src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/5dcf05cd-395f-415e-ab0c-a32698b3b434.jpeg"
@@ -457,11 +463,11 @@ const Index = () => {
                     />
                   </div>
                   <div className="p-5">
-                    <h4 className="text-base font-bold text-[#1a2a2a]">Абрамова Ирина</h4>
-                    <p className="text-[#4a6060] text-xs mb-4">Психолог · Энерготерапевт · Расстановщик</p>
+                    <h4 className="text-base font-bold text-[#2C2320]">Абрамова Ирина</h4>
+                    <p className="text-[#7A6A64] text-xs mb-4">Психолог · Энерготерапевт · Расстановщик</p>
                     <div className="flex gap-2">
                       <a href="tel:+79511408363" className="flex-1">
-                        <Button size="sm" className="w-full bg-[#2ABCB4] hover:bg-[#1fa8a0] text-white rounded-lg flex items-center justify-center gap-1.5 text-xs">
+                        <Button size="sm" className="w-full bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-lg flex items-center justify-center gap-1.5 text-xs">
                           <Icon name="Phone" size={13} />
                           Позвонить
                         </Button>
@@ -482,15 +488,15 @@ const Index = () => {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="relative py-12 px-6 bg-[#0a1a1a] text-white/60 text-center">
+      <footer className="relative py-12 px-6 bg-[#2C2320] text-white/60 text-center">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Icon name="Brain" size={18} className="text-[#2ABCB4]" />
+            <Icon name="Brain" size={18} className="text-[#B07A8A]" />
             <span className="font-black text-white tracking-wide">НЕЙРОФИТНЕС</span>
           </div>
           <p className="text-sm text-white/40 mb-1">Онлайн-клуб для женщин · Абрамова Ирина</p>
           <p className="text-sm">
-            <a href="tel:+79511408363" className="hover:text-[#2ABCB4] transition-colors">+7 951 140-83-63</a>
+            <a href="tel:+79511408363" className="hover:text-[#C49AA6] transition-colors">+7 951 140-83-63</a>
           </p>
           <div className="flex items-center justify-center gap-3 mt-5">
             <a
