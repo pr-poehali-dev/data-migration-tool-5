@@ -55,6 +55,49 @@ const benefits = [
   },
 ]
 
+const reviews = [
+  {
+    name: "Марина, 34 года",
+    city: "Москва",
+    avatar: "М",
+    color: "#B07A8A",
+    stars: 5,
+    before: "Жила на автопилоте, не высыпалась, раздражалась на детей",
+    text: "Через 2 недели в клубе я впервые за 3 года спала без снотворного. Перестала срываться на семью. Начала делать маленькие вещи только для себя — и это изменило всё.",
+    result: "−80% тревоги, нормальный сон",
+  },
+  {
+    name: "Елена, 41 год",
+    city: "Санкт-Петербург",
+    avatar: "Е",
+    color: "#8C5C6B",
+    stars: 5,
+    before: "Не узнавала себя в зеркале, стеснялась своего тела",
+    text: "Я никогда не думала, что смогу полюбить своё тело. После первого месяца в клубе начала носить платья, которые боялась купить 5 лет. Муж говорит, что я светлее стала.",
+    result: "Приняла тело, стала женственнее",
+  },
+  {
+    name: "Ольга, 29 лет",
+    city: "Екатеринбург",
+    avatar: "О",
+    color: "#C49AA6",
+    stars: 5,
+    before: "Тревога, непонимание чего хочу от жизни, ощущение пустоты",
+    text: "За 3 месяца поняла свои желания, нашла дело которое приносит деньги и радость. Ушла с нелюбимой работы — страшно не было. Ирина и девочки из клуба поддерживали каждый шаг.",
+    result: "Новая работа, доход вырос на 40%",
+  },
+  {
+    name: "Татьяна, 38 лет",
+    city: "Краснодар",
+    avatar: "Т",
+    color: "#9E7060",
+    stars: 5,
+    before: "Забыла кто я такая — только мама и жена, но не женщина",
+    text: "Клуб вернул меня себе. Я снова танцую, хожу на свидания с мужем, улыбаюсь по утрам. Звучит просто, но это было моей настоящей мечтой последние 5 лет.",
+    result: "Вернула женственность и радость",
+  },
+]
+
 const objections = [
   {
     icon: "Clock",
@@ -440,6 +483,78 @@ const Index = () => {
                 style={{ aspectRatio: "3/4", objectPosition: "center 20%" }}
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── REVIEWS ── */}
+      <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#2C2320]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 ring-1 ring-white/20 rounded-full mb-5">
+              <Icon name="Star" size={14} className="text-[#C49AA6]" />
+              <span className="text-sm font-medium text-[#C49AA6]">Истории участниц</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+              Они уже изменили<br />
+              <span className="text-[#C49AA6]">свою жизнь</span>
+            </h2>
+            <p className="text-white/50 text-base sm:text-lg max-w-xl mx-auto">
+              Реальные истории участниц клуба — без фотошопа и придумок
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {reviews.map((r, i) => (
+              <div key={i} className="bg-white/5 ring-1 ring-white/10 rounded-2xl p-6 sm:p-7 flex flex-col gap-4 hover:bg-white/8 transition-colors">
+                {/* Stars */}
+                <div className="flex gap-1">
+                  {Array.from({ length: r.stars }).map((_, s) => (
+                    <Icon key={s} name="Star" size={15} className="text-[#C49AA6]" />
+                  ))}
+                </div>
+
+                {/* Before */}
+                <div className="flex items-start gap-2">
+                  <span className="text-xs font-bold text-white/30 uppercase tracking-wider pt-0.5 shrink-0">Было:</span>
+                  <p className="text-white/40 text-sm italic">«{r.before}»</p>
+                </div>
+
+                {/* Review text */}
+                <p className="text-white/80 text-sm sm:text-base leading-relaxed flex-1">
+                  "{r.text}"
+                </p>
+
+                {/* Result badge */}
+                <div className="inline-flex items-center gap-2 bg-[#B07A8A]/20 ring-1 ring-[#B07A8A]/30 rounded-full px-4 py-2 self-start">
+                  <Icon name="TrendingUp" size={13} className="text-[#C49AA6]" />
+                  <span className="text-xs font-bold text-[#C49AA6]">{r.result}</span>
+                </div>
+
+                {/* Author */}
+                <div className="flex items-center gap-3 pt-2 border-t border-white/10">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
+                    style={{ backgroundColor: r.color }}
+                  >
+                    {r.avatar}
+                  </div>
+                  <div>
+                    <p className="text-white font-semibold text-sm">{r.name}</p>
+                    <p className="text-white/40 text-xs">{r.city}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Button
+              className="bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-full px-10 font-semibold shadow-xl shadow-[#B07A8A]/25 min-h-[52px]"
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            >
+              Хочу такой же результат
+            </Button>
           </div>
         </div>
       </section>
