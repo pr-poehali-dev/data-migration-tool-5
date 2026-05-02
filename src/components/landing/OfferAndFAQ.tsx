@@ -218,16 +218,6 @@ const OfferAndFAQ = () => {
             ))}
           </div>
 
-          <div className="mt-8 p-7 bg-gradient-to-br from-[#8B1A4A] to-[#A35570] rounded-3xl text-center shadow-2xl shadow-[#C4748A]/20">
-            <p className="text-white font-bold text-lg mb-2" style={{fontFamily:"'Playfair Display',serif"}}>Гарантия результата</p>
-            <p className="text-white/85 text-sm mb-5">Если через 7 дней ты не почувствуешь никакого изменения — вернём деньги без вопросов</p>
-            <Button
-              className="bg-white hover:bg-white/90 text-[#8B1A4A] rounded-full px-8 font-bold min-h-[48px]"
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              Попробовать с гарантией
-            </Button>
-          </div>
         </div>
       </section>
 

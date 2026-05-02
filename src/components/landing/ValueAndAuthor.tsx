@@ -242,56 +242,6 @@ const ValueAndAuthor = () => {
             </p>
           </div>
 
-          {/* Личная трансформация автора — ДО / ПОСЛЕ */}
-          <div className="mb-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#1A0F12] to-[#0D0A0B] ring-1 ring-[#C4748A]/30">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              {/* ДО — монашка */}
-              <div className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
-                <img
-                  src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/ff043c18-5851-44a9-a12f-ece25e3b2669.jpeg"
-                  alt="Я 4 года назад"
-                  className="w-full aspect-[3/4] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <div className="absolute top-3 left-3">
-                  <span className="bg-black/60 backdrop-blur text-white/90 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ring-1 ring-white/20">До</span>
-                </div>
-                <div className="absolute bottom-4 left-4">
-                  <p className="text-xs font-bold tracking-[0.3em] text-white/70 uppercase mb-1">4 года назад</p>
-                  <p className="text-white text-base" style={{fontFamily:"'Playfair Display',serif"}}>Жила в чужих правилах</p>
-                </div>
-              </div>
-              {/* ПОСЛЕ — медитация */}
-              <div className="relative rounded-2xl overflow-hidden ring-1 ring-[#C4748A]/40 shadow-2xl shadow-[#C4748A]/20">
-                <img
-                  src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/bc2d28c3-6dd7-4159-95f7-e373c2f3c629.jpeg"
-                  alt="Я сегодня"
-                  className="w-full aspect-[3/4] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute top-3 left-3">
-                  <span className="bg-[#C4748A] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">После</span>
-                </div>
-                <div className="absolute bottom-4 left-4">
-                  <p className="text-xs font-bold tracking-[0.3em] text-[#E0A0B0] uppercase mb-1">Сегодня</p>
-                  <p className="text-white text-base" style={{fontFamily:"'Playfair Display',serif"}}>Живу в своей энергии</p>
-                </div>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="text-xs font-bold tracking-[0.3em] text-[#E0A0B0] uppercase mb-3">Моя история</p>
-              <h3 className="text-2xl sm:text-3xl font-black text-white mb-4 leading-tight" style={{fontFamily:"'Playfair Display',serif"}}>
-                Я была <span className="italic text-[#C4748A]">такой же,</span> как и ты
-              </h3>
-              <p className="text-white/65 text-base leading-relaxed mb-3 max-w-2xl mx-auto">
-                Уставшая, отёчная, со взглядом «ничего не радует». Жила в чужих правилах, не верила в себя, в своё тело, в свою жизнь.
-              </p>
-              <p className="text-white/65 text-base leading-relaxed max-w-2xl mx-auto">
-                Сегодня я живая, дерзкая, чувствую себя женщиной. И провела по этому пути уже 2500+ женщин. Ты следующая.
-              </p>
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             {[
               {

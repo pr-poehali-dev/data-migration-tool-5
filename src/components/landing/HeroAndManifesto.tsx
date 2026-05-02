@@ -212,11 +212,11 @@ const HeroAndManifesto = () => {
         </div>
       </section>
 
-      {/* ── ДЕРЗКИЙ БЛОК 2: Главная ложь (с деньгами) ── */}
+      {/* ── ДЕРЗКИЙ БЛОК 2: Главная ложь ── */}
       <section className="relative py-20 sm:py-28 px-4 sm:px-6 md:px-12 overflow-hidden bg-[#0D0A0B]">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: "url('https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/84d96691-15b4-48a7-ac4c-3145ec32564b.jpeg')" }}
+          style={{ backgroundImage: "url('https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/06c4c42c-3277-4e4b-9f75-beee825edf06.jpeg')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-l from-[#0D0A0B] via-[#0D0A0B]/85 to-[#0D0A0B]/50" />
         <div className="relative max-w-3xl ml-auto text-right">

@@ -109,7 +109,6 @@ const ContactAndFooter = () => {
                   { icon: "MapPin", text: "Онлайн — из любой точки мира" },
                   { icon: "Calendar", text: "Старт — каждый месяц, мест немного" },
                   { icon: "Users", text: "Камерная группа — максимум внимания" },
-                  { icon: "ShieldCheck", text: "Гарантия результата за 7 дней" },
                   { icon: "Phone", text: "+7 951 140-83-63" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 text-white/65">
