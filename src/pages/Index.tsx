@@ -3,13 +3,14 @@ import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import Icon from "@/components/ui/icon"
 
-// Палитра
-// --bg-main:    #FAF7F5   — тёплый молочный фон
-// --bg-alt:     #F3EEE9   — пудровый
-// --accent:     #B07A8A   — пыльная роза
-// --accent-dk:  #8C5C6B   — тёмная роза
-// --text-main:  #2C2320   — шоколад
-// --text-muted: #7A6A64   — тёплый серый
+// Палитра — DARK LUXE
+// --bg-main:    #0D0A0B   — глубокий чёрный
+// --bg-alt:     #100C0D   — графит
+// --accent:     #C4748A   — пыльная роза
+// --accent-dk:  #8B1A4A   — глубокий бордо
+// --accent-lt:  #E0A0B0   — нежный розовый
+// --text-main:  #FFFFFF   — белый
+// --text-muted: rgba(255,255,255,0.6)
 
 interface FAQ {
   question: string
@@ -44,8 +45,8 @@ const benefits = [
   {
     icon: "Users",
     title: "Обретёшь настоящих подруг",
-    desc: "200+ женщин, которые тебя поймут без осуждения. Закрытое сообщество с живыми встречами, поддержкой 24/7 и общими победами.",
-    result: "Сообщество 200+",
+    desc: "500+ женщин, которые тебя поймут без осуждения. Закрытое сообщество с живыми встречами, поддержкой 24/7 и общими победами.",
+    result: "Сообщество 500+",
   },
   {
     icon: "TrendingUp",
@@ -76,31 +77,61 @@ const reviews = [
     img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/4476ce3f-56b1-49b0-b1f2-75e6e97762fd.jpeg",
     quote: "Столько инсайтов за всё это время 🙏 Безумно благодарна судьбе, что наши жизненные пути пересеклись. В нужное время.",
   },
-  {
-    label: "Вышла из токсичных отношений",
-    img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/15216d44-2dce-4c6d-bf4e-1543459c1c71.jpeg",
-    quote: "Прошло около полугода после расстановок... Фу, пишу, и аж не верю что это была я 😂 И вот 2025 — год очищения 😊",
-  },
 ]
 
-const objections = [
+const tariffs = [
   {
-    icon: "Clock",
-    title: "«У меня нет времени на себя»",
-    answer:
-      "Именно поэтому этот клуб и создан. Все форматы — онлайн, 2–3 раза в неделю по 30–60 минут. Можно смотреть в любое удобное время. Многие участницы — мамы и работающие женщины.",
+    name: "Стандарт",
+    price: "15 590 ₽",
+    accent: false,
+    features: [
+      "Участие в клубе 30 дней",
+      "Все живые практики и записи",
+      "Закрытый чат поддержки",
+    ],
   },
   {
-    icon: "BadgeQuestion",
-    title: "«Психология — это не для меня»",
-    answer:
-      "Никаких сложных терминов и теории ради теории. Только практики, которые дают результат уже на первой неделе. Никакого опыта не нужно — начинаем с нуля.",
+    name: "Стандарт+",
+    price: "22 590 ₽",
+    accent: false,
+    features: [
+      "Участие в клубе 30 дней",
+      "Участие заместителем на расстановках — клубных и клиентских",
+      "Без ограничений по количеству участий за месяц",
+    ],
   },
   {
-    icon: "Wallet",
-    title: "«Дорого и непонятно, будет ли результат»",
-    answer:
-      "Стоимость — от 2 990 ₽/месяц. Это меньше одного похода к психологу. А результат ты почувствуешь через 7 дней или вернём деньги — это наша гарантия.",
+    name: "VIP",
+    price: "35 000 ₽",
+    accent: true,
+    features: [
+      "Личная расстановка",
+      "Участие в клубе 30 дней",
+      "Участие заместителем без ограничений",
+    ],
+  },
+  {
+    name: "Super VIP",
+    price: "44 500 ₽",
+    accent: false,
+    features: [
+      "Участие в клубе 30 дней",
+      "Участие заместителем без ограничений",
+      "2 расстановки",
+      "Моя обратная связь в личных сообщениях весь месяц — разбираем любые ситуации",
+    ],
+  },
+  {
+    name: "Super VIP с личным ведением",
+    price: "40 000 ₽",
+    accent: true,
+    features: [
+      "Участие в клубе 30 дней",
+      "Участие заместителем без ограничений",
+      "2 расстановки",
+      "2 часовые встречи лично со мной",
+      "Личные сообщения 24/7 — отвечаю на любые вопросы",
+    ],
   },
 ]
 
@@ -120,7 +151,7 @@ const Index = () => {
     {
       question: "Как проходят занятия?",
       answer:
-        "Онлайн, 2–3 раза в неделю. Живые практики, разборы, нейро-упражнения и закрытый чат поддержки. Каждый месяц — новая тема и групповой челлендж.",
+        "Это формат онлайн в удобное для тебя время — ты можешь читать и слушать когда захочешь. Встречи 1–2 раза в неделю в комфортном режиме для всех. Если не успеваешь — всё доступно в записи.",
     },
     {
       question: "Нужен ли опыт в медитации или психологии?",
@@ -246,40 +277,158 @@ const Index = () => {
                 ))}
               </div>
               <p className="text-sm text-white/60">
-                <span className="font-bold text-white">200+ женщин</span> уже изменили свою жизнь
+                <span className="font-bold text-white">500+ женщин</span> уже прошли проекты
               </p>
             </div>
           </div>
 
-          {/* Right — фото */}
+          {/* Right — фото в монашке */}
           <div className="relative flex justify-center mt-6 lg:mt-0">
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#B07A8A]/15 to-[#B07A8A]/5 rounded-3xl transform rotate-3" />
+              <div className="absolute -inset-2 bg-gradient-to-br from-[#C4748A]/30 to-[#8B1A4A]/10 rounded-3xl blur-xl" />
               <img
-                src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/55508f1c-2bfb-4ec9-9c75-73c535e43541.jpeg"
-                alt="Участницы клуба НЕЙРОФИТНЕС"
-                className="relative z-10 w-full rounded-3xl object-cover shadow-2xl shadow-[#B07A8A]/15"
+                src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/96ba750f-8786-42a3-8c3b-12f7d68e9d5c.jpeg"
+                alt="Снимаем все запреты"
+                className="relative z-10 w-full rounded-3xl object-cover shadow-2xl shadow-[#8B1A4A]/40 ring-1 ring-white/10"
                 style={{ aspectRatio: "3/4", objectPosition: "center 20%" }}
               />
               {/* Floating badge */}
-              <div className="absolute z-20 -bottom-4 -left-2 sm:-left-4 bg-white rounded-2xl shadow-xl px-4 py-3 ring-1 ring-[#B07A8A]/15">
-                <p className="text-xs text-[#7A6A64] mb-1">Уже в клубе</p>
+              <div className="absolute z-20 -bottom-4 -left-2 sm:-left-4 bg-[#0D0A0B] rounded-2xl shadow-2xl px-4 py-3 ring-1 ring-[#C4748A]/40">
+                <p className="text-xs text-white/50 mb-1">Прошли проекты</p>
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
-                    {["#B07A8A", "#8C5C6B", "#C49AA6"].map((c, i) => (
-                      <div key={i} className="w-6 h-6 rounded-full border-2 border-white" style={{ backgroundColor: c }} />
+                    {["#C4748A", "#8B1A4A", "#E0A0B0"].map((c, i) => (
+                      <div key={i} className="w-6 h-6 rounded-full border-2 border-[#0D0A0B]" style={{ backgroundColor: c }} />
                     ))}
                   </div>
-                  <span className="font-bold text-[#2C2320] text-sm">200+ женщин</span>
+                  <span className="font-bold text-white text-sm">500+ женщин</span>
                 </div>
               </div>
               {/* Top badge */}
-              <div className="absolute z-20 -top-3 -right-2 sm:-right-4 bg-[#B07A8A] text-white rounded-xl px-3 py-2 text-center shadow-lg">
+              <div className="absolute z-20 -top-3 -right-2 sm:-right-4 bg-[#C4748A] text-white rounded-xl px-3 py-2 text-center shadow-lg">
                 <p className="text-xs font-medium opacity-90">Результат</p>
                 <p className="text-sm font-black">за 7 дней</p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── МАНИФЕСТ: СНИМАЕМ ВСЕ ЗАПРЕТЫ ── */}
+      <section className="relative py-20 sm:py-28 px-4 sm:px-6 md:px-12 bg-[#0D0A0B] overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#8B1A4A]/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#C4748A]/15 rounded-full blur-3xl" />
+        </div>
+        <div className="relative max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#8B1A4A]/20 ring-1 ring-[#C4748A]/40 rounded-full mb-6">
+              <Icon name="Flame" size={14} className="text-[#E0A0B0]" />
+              <span className="text-xs font-bold tracking-[0.3em] text-[#E0A0B0] uppercase">Манифест</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-[1.05] mb-5" style={{fontFamily:"'Playfair Display',serif"}}>
+              Снимаем<br />
+              <span className="italic text-[#C4748A]">все запреты</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
+              Принятие всех своих сторон — от монашки до невероятной дерзкой красотки. От нежной, ласковой, наслаждающейся, всё любящей — до энергичной ракеты.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            {[
+              {
+                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/96ba750f-8786-42a3-8c3b-12f7d68e9d5c.jpeg",
+                label: "Тайна",
+                desc: "Дерзкая, мистическая, недосягаемая",
+              },
+              {
+                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/0db77fe1-89f9-4bac-89ae-b51b42927fec.jpeg",
+                label: "Сила",
+                desc: "Уверенная, спокойная, в своей энергии",
+              },
+              {
+                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/7d93cc5d-27e5-4278-b67d-60d5765e2f6c.jpeg",
+                label: "Чувственность",
+                desc: "Нежная, наслаждающаяся, любящая",
+              },
+            ].map((c, i) => (
+              <div key={i} className="group relative rounded-3xl overflow-hidden ring-1 ring-white/10 hover:ring-[#C4748A]/50 transition-all">
+                <img src={c.img} alt={c.label} className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D0A0B] via-[#0D0A0B]/50 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-xs font-bold tracking-[0.3em] text-[#C4748A] uppercase mb-2">{c.label}</p>
+                  <p className="text-white text-lg leading-snug" style={{fontFamily:"'Playfair Display',serif"}}>{c.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ДЕРЗКИЙ БЛОК 1: Серьёзно? ── */}
+      <section className="relative py-20 sm:py-28 px-4 sm:px-6 md:px-12 overflow-hidden bg-[#0D0A0B]">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-40"
+          style={{ backgroundImage: "url('https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/0db77fe1-89f9-4bac-89ae-b51b42927fec.jpeg')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0D0A0B] via-[#0D0A0B]/80 to-[#0D0A0B]/40" />
+        <div className="relative max-w-3xl">
+          <p className="text-2xl sm:text-3xl md:text-4xl font-light text-white leading-relaxed mb-6" style={{fontFamily:"'Playfair Display',serif"}}>
+            <span className="italic text-[#C4748A]">Серьёзно?</span> Опять утро, кофе, чтобы просто открыть глаза? Опять заедаешь стресс сладким? Опять день сурка?
+          </p>
+          <p className="text-lg sm:text-xl text-white/80 mb-6 leading-relaxed">
+            Ты не для этого рождена. Твоё тело способно на <span className="text-[#E0A0B0] font-semibold">вау-результаты</span> без химии и БАДов. Твой мозг способен на прорыв без допинга.
+          </p>
+          <p className="text-2xl sm:text-3xl font-bold text-white" style={{fontFamily:"'Playfair Display',serif"}}>
+            Хватит это терпеть. <span className="text-[#C4748A] italic">Смотри дальше.</span>
+          </p>
+        </div>
+      </section>
+
+      {/* ── ДЕРЗКИЙ БЛОК 2: Главная ложь (с деньгами) ── */}
+      <section className="relative py-20 sm:py-28 px-4 sm:px-6 md:px-12 overflow-hidden bg-[#0D0A0B]">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-25"
+          style={{ backgroundImage: "url('https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/4b91ae2b-fa18-46db-93e9-dac27c4c7d6a.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-l from-[#0D0A0B] via-[#0D0A0B]/85 to-[#0D0A0B]/50" />
+        <div className="relative max-w-3xl ml-auto text-right">
+          <p className="text-2xl sm:text-3xl md:text-4xl font-light text-white leading-relaxed mb-6" style={{fontFamily:"'Playfair Display',serif"}}>
+            Знаешь, в чём <span className="italic text-[#C4748A]">главная ложь?</span>
+          </p>
+          <p className="text-lg sm:text-xl text-white/80 mb-6 leading-relaxed">
+            В том, что тебе нужен кто-то извне. Священник, который только может правильно молиться за тебя. Фармацевт, который продаст «счастье» в банке.
+          </p>
+          <p className="text-xl sm:text-2xl text-white/90 mb-6 leading-relaxed" style={{fontFamily:"'Playfair Display',serif"}}>
+            Ответы — <span className="text-[#E0A0B0] italic">внутри тебя.</span> Всегда были. Просто твой мозг зашумлён. Твоё тело забито ненужной информацией.
+          </p>
+          <p className="text-2xl sm:text-3xl font-bold text-white" style={{fontFamily:"'Playfair Display',serif"}}>
+            Как это исправить? <span className="text-[#C4748A] italic">Есть система.</span>
+          </p>
+        </div>
+      </section>
+
+      {/* ── ДЕРЗКИЙ БЛОК 3: Представь ── */}
+      <section className="relative py-20 sm:py-28 px-4 sm:px-6 md:px-12 overflow-hidden bg-gradient-to-br from-[#1A0F12] via-[#0D0A0B] to-[#1A0F12]">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#C4748A]/15 rounded-full blur-3xl" />
+        <div className="relative max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#C4748A]/15 ring-1 ring-[#C4748A]/40 rounded-full mb-8">
+            <Icon name="Sparkles" size={14} className="text-[#E0A0B0]" />
+            <span className="text-xs font-bold tracking-[0.3em] text-[#E0A0B0] uppercase">Представь</span>
+          </div>
+          <p className="text-2xl sm:text-3xl md:text-4xl font-light text-white leading-relaxed mb-6" style={{fontFamily:"'Playfair Display',serif"}}>
+            Ты просыпаешься <span className="italic text-[#C4748A]">бодрой.</span> Без кофе. Смотришь в зеркало и видишь лёгкость. Ушли отёки.
+          </p>
+          <p className="text-xl sm:text-2xl text-white/80 mb-6 leading-relaxed">
+            В голове — <span className="text-[#E0A0B0] font-semibold">кристальная ясность.</span> Ты видишь возможности, а не проблемы. Клиенты сами находят тебя, потому что чувствуют твою энергию.
+          </p>
+          <p className="text-xl sm:text-2xl text-white/80 mb-8 leading-relaxed">
+            Ты идёшь к целям не из «надо», а из <span className="text-[#C4748A] italic font-semibold">«хочу»</span>.
+          </p>
+          <p className="text-3xl sm:text-4xl font-black text-white" style={{fontFamily:"'Playfair Display',serif"}}>
+            Это не магия. Это <span className="text-[#C4748A]">нейрофитнес.</span>
+          </p>
         </div>
       </section>
 
@@ -368,41 +517,37 @@ const Index = () => {
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            {/* Фото */}
+            {/* Фото на розовом */}
             <div className="relative order-1 lg:order-1">
+              <div className="absolute -inset-3 bg-gradient-to-br from-[#C4748A]/30 to-transparent rounded-3xl blur-2xl" />
               <img
-                src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/7d93cc5d-27e5-4278-b67d-60d5765e2f6c.jpeg"
+                src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/0db77fe1-89f9-4bac-89ae-b51b42927fec.jpeg"
                 alt="Ирина Абрамова"
-                className="relative z-10 w-full max-w-xs sm:max-w-sm mx-auto rounded-3xl object-cover shadow-2xl shadow-[#C4748A]/20"
-                style={{ aspectRatio: "2/3", objectPosition: "center top" }}
+                className="relative z-10 w-full max-w-xs sm:max-w-sm mx-auto rounded-3xl object-cover shadow-2xl shadow-[#C4748A]/30 ring-1 ring-white/10"
+                style={{ aspectRatio: "3/4", objectPosition: "center top" }}
               />
               <div className="absolute z-20 -top-3 -right-2 sm:-right-4 bg-[#C4748A] text-white rounded-2xl shadow-xl px-4 py-3">
                 <p className="text-xs font-medium opacity-80 mb-0.5">Опыт</p>
-                <p className="text-xl font-black">10+ лет</p>
+                <p className="text-xl font-black">5+ лет</p>
               </div>
             </div>
 
             {/* Текст */}
             <div className="order-2">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 ring-1 ring-[#C4748A]/30 rounded-full mb-6">
-                <Icon name="Quote" size={14} className="text-[#C4748A]" />
-                <span className="text-sm font-medium text-[#E0A0B0]">Твой проводник</span>
-              </div>
-
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 leading-tight" style={{fontFamily:"'Playfair Display',serif"}}>
                 Абрамова Ирина
                 <span className="block text-[#C4748A] text-xl sm:text-2xl font-light mt-1 italic">Психолог · Энерготерапевт · Расстановщик</span>
               </h2>
 
               <blockquote className="text-lg sm:text-xl font-light text-white/80 leading-relaxed mb-6 border-l-4 border-[#C4748A] pl-5 italic" style={{fontFamily:"'Playfair Display',serif"}}>
-                "Я знаю, каково это — жить в постоянном стрессе и не узнавать себя в зеркале. Я прошла этот путь сама и помогла пройти 200+ женщинам."
+                "Я знаю, каково это — жить в постоянном стрессе и не узнавать себя в зеркале. Я прошла этот путь сама и помогла пройти 2500+ женщинам."
               </blockquote>
 
               <div className="space-y-3 mb-8">
                 {[
-                  "Практикующий психолог с 10-летним опытом",
+                  "Практикующий психолог более 5 лет",
                   "Автор методики работы со стрессом и женской энергией",
-                  "Провела 500+ индивидуальных консультаций",
+                  "Провела более 2500 консультаций",
                   "Спикер женских форумов и ретритов",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
@@ -436,7 +581,7 @@ const Index = () => {
                 <span className="text-[#C4748A]">мы вместе</span>
               </h2>
               <p className="text-base sm:text-lg text-white/55 leading-relaxed mb-7">
-                200+ женщин уже в клубе. Они поддерживают, понимают без слов и радуются твоим победам как своим. Здесь не бросают начатое — доводят до конца с любовью.
+                Более 500 женщин уже прошли проекты. Они поддерживают, понимают без слов и радуются твоим победам как своим. Здесь не бросают начатое — доводят до конца с любовью.
               </p>
 
               <div className="space-y-3 mb-8">
@@ -477,20 +622,46 @@ const Index = () => {
       </section>
 
       {/* ── TRANSFORMATIONS ── */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#1A1210]">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#100C0D]">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 ring-1 ring-white/20 rounded-full mb-5">
-              <Icon name="Sparkles" size={14} className="text-[#C49AA6]" />
-              <span className="text-sm font-medium text-[#C49AA6]">Внешние изменения</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4748A]/15 ring-1 ring-[#C4748A]/30 rounded-full mb-5">
+              <Icon name="Sparkles" size={14} className="text-[#E0A0B0]" />
+              <span className="text-sm font-medium text-[#E0A0B0]">Внешние изменения</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight" style={{fontFamily:"'Playfair Display',serif"}}>
               Они изменились<br />
-              <span className="text-[#C49AA6]">снаружи и внутри</span>
+              <span className="italic text-[#C4748A]">снаружи и внутри</span>
             </h2>
             <p className="text-white/50 text-base sm:text-lg max-w-xl mx-auto">
               Ушли отёки, снизился вес — а главное появился блеск в глазах
             </p>
+          </div>
+
+          {/* Личная трансформация автора */}
+          <div className="mb-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#1A0F12] to-[#0D0A0B] ring-1 ring-[#C4748A]/30 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
+              <img
+                src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/96ea61d4-81d8-4d37-8125-9586a57aa74b.jpeg"
+                alt="Я 4 года назад и сейчас"
+                className="w-full aspect-[3/4] object-cover"
+              />
+              <div className="absolute top-3 left-3">
+                <span className="bg-[#C4748A] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Моя история</span>
+              </div>
+            </div>
+            <div>
+              <p className="text-xs font-bold tracking-[0.3em] text-[#E0A0B0] uppercase mb-3">Я 4 года назад</p>
+              <h3 className="text-2xl sm:text-3xl font-black text-white mb-4 leading-tight" style={{fontFamily:"'Playfair Display',serif"}}>
+                Я была <span className="italic text-[#C4748A]">такой же,</span> как и ты
+              </h3>
+              <p className="text-white/65 text-base leading-relaxed mb-3">
+                Уставшая, отёчная, со взглядом «ничего не радует». Я не верила в себя, в своё тело, в свою жизнь.
+              </p>
+              <p className="text-white/65 text-base leading-relaxed">
+                Сегодня я живая, дерзкая, чувствую себя женщиной. И провела по этому пути уже 2500+ женщин. Ты следующая.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
@@ -525,7 +696,7 @@ const Index = () => {
               },
             ].map((p, i) => (
               <div key={i} className="flex flex-col gap-3 group">
-                <div className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl group-hover:ring-[#B07A8A]/50 transition-all bg-black">
+                <div className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl group-hover:ring-[#C4748A]/50 transition-all bg-black">
                   <img
                     src={p.img}
                     alt={p.tag}
@@ -533,18 +704,18 @@ const Index = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute top-3 left-3">
-                    <span className="bg-[#B07A8A]/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    <span className="bg-[#C4748A]/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full">
                       {p.tag}
                     </span>
                   </div>
                 </div>
-                <p className="text-[#C49AA6] text-sm font-medium leading-snug px-1 italic">
+                <p className="text-[#E0A0B0] text-sm font-medium leading-snug px-1 italic">
                   {p.quote}
                 </p>
                 <div className="flex flex-col gap-1.5 px-1">
                   {p.changes.map((c, j) => (
                     <div key={j} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#C49AA6] shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#C4748A] shrink-0" />
                       <span className="text-white/60 text-xs">{c}</span>
                     </div>
                   ))}
@@ -556,16 +727,16 @@ const Index = () => {
       </section>
 
       {/* ── REVIEWS ── */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#2C2320]">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#100C0D]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 ring-1 ring-white/20 rounded-full mb-5">
-              <Icon name="Star" size={14} className="text-[#C49AA6]" />
-              <span className="text-sm font-medium text-[#C49AA6]">Истории участниц</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4748A]/15 ring-1 ring-[#C4748A]/30 rounded-full mb-5">
+              <Icon name="Star" size={14} className="text-[#E0A0B0]" />
+              <span className="text-sm font-medium text-[#E0A0B0]">Истории участниц</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight" style={{fontFamily:"'Playfair Display',serif"}}>
               Они уже изменили<br />
-              <span className="text-[#C49AA6]">свою жизнь</span>
+              <span className="italic text-[#C4748A]">свою жизнь</span>
             </h2>
             <p className="text-white/50 text-base sm:text-lg max-w-xl mx-auto">
               Реальные истории участниц клуба — без фотошопа и придумок
@@ -576,12 +747,12 @@ const Index = () => {
             {reviews.map((r, i) => (
               <div key={i} className="group flex flex-col gap-3">
                 {/* Лейбл */}
-                <div className="inline-flex items-center gap-2 self-start bg-[#B07A8A]/20 ring-1 ring-[#B07A8A]/30 rounded-full px-3 py-1.5">
-                  <Icon name="MessageCircle" size={12} className="text-[#C49AA6]" />
-                  <span className="text-xs font-semibold text-[#C49AA6]">{r.label}</span>
+                <div className="inline-flex items-center gap-2 self-start bg-[#C4748A]/15 ring-1 ring-[#C4748A]/30 rounded-full px-3 py-1.5">
+                  <Icon name="MessageCircle" size={12} className="text-[#E0A0B0]" />
+                  <span className="text-xs font-semibold text-[#E0A0B0]">{r.label}</span>
                 </div>
                 {/* Скриншот переписки */}
-                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl group-hover:ring-[#B07A8A]/40 transition-all">
+                <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl group-hover:ring-[#C4748A]/40 transition-all">
                   <img
                     src={r.img}
                     alt={r.label}
@@ -599,7 +770,7 @@ const Index = () => {
 
           <div className="mt-10 text-center">
             <Button
-              className="bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-full px-10 font-semibold shadow-xl shadow-[#B07A8A]/25 min-h-[52px]"
+              className="bg-[#C4748A] hover:bg-[#A35570] text-white rounded-full px-10 font-semibold shadow-xl shadow-[#C4748A]/25 min-h-[52px]"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Хочу такой же результат
@@ -608,41 +779,128 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── OBJECTIONS ── */}
-      <section id="objections" className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#F3EEE9]">
+      {/* ── ТАРИФЫ ── */}
+      <section id="tariffs" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#0D0A0B] overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#C4748A]/10 rounded-full blur-3xl" />
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4748A]/15 ring-1 ring-[#C4748A]/30 rounded-full mb-5">
+              <Icon name="Gem" size={14} className="text-[#E0A0B0]" />
+              <span className="text-sm font-medium text-[#E0A0B0]">Тарифы</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight" style={{fontFamily:"'Playfair Display',serif"}}>
+              Выбери свой <span className="italic text-[#C4748A]">формат</span>
+            </h2>
+            <p className="text-base sm:text-lg text-white/55 max-w-xl mx-auto">
+              От участия в клубе до личного ведения — каждая найдёт своё
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            {tariffs.map((t, i) => (
+              <div
+                key={i}
+                className={`relative flex flex-col rounded-3xl p-7 sm:p-8 ring-1 transition-all hover:-translate-y-1 ${
+                  t.accent
+                    ? "bg-gradient-to-br from-[#8B1A4A] to-[#A35570] ring-[#C4748A]/60 shadow-2xl shadow-[#C4748A]/30"
+                    : "bg-white/4 ring-white/10 hover:ring-[#C4748A]/40"
+                }`}
+              >
+                {t.accent && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-[#8B1A4A] text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full shadow-lg">
+                    Хит
+                  </div>
+                )}
+                <div className="mb-5">
+                  <h3 className={`text-xl font-bold mb-3 ${t.accent ? "text-white" : "text-white"}`} style={{fontFamily:"'Playfair Display',serif"}}>
+                    {t.name}
+                  </h3>
+                  <div className={`text-3xl sm:text-4xl font-black ${t.accent ? "text-white" : "text-[#C4748A]"}`}>
+                    {t.price}
+                  </div>
+                </div>
+                <ul className="space-y-3 mb-6 flex-1">
+                  {t.features.map((f, j) => (
+                    <li key={j} className="flex items-start gap-3">
+                      <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${t.accent ? "bg-white/20" : "bg-[#C4748A]/20"}`}>
+                        <Icon name="Check" size={11} className={t.accent ? "text-white" : "text-[#E0A0B0]"} />
+                      </div>
+                      <span className={`text-sm leading-relaxed ${t.accent ? "text-white/90" : "text-white/65"}`}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  className={`w-full rounded-full font-semibold min-h-[48px] ${
+                    t.accent
+                      ? "bg-white hover:bg-white/90 text-[#8B1A4A]"
+                      : "bg-[#C4748A] hover:bg-[#A35570] text-white"
+                  }`}
+                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                >
+                  Выбрать тариф
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── OBJECTIONS / Я ЗНАЮ О ЧЁМ ТЫ ДУМАЕШЬ ── */}
+      <section id="objections" className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#100C0D]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B07A8A]/10 ring-1 ring-[#B07A8A]/25 rounded-full mb-5">
-              <Icon name="ShieldCheck" size={14} className="text-[#8C5C6B]" />
-              <span className="text-sm font-medium text-[#8C5C6B]">Отвечаем честно</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4748A]/15 ring-1 ring-[#C4748A]/30 rounded-full mb-5">
+              <Icon name="ShieldCheck" size={14} className="text-[#E0A0B0]" />
+              <span className="text-sm font-medium text-[#E0A0B0]">Отвечаю честно</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#2C2320] mb-4">
-              «Но у меня есть сомнения...»
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4" style={{fontFamily:"'Playfair Display',serif"}}>
+              Я знаю, о чём <span className="italic text-[#C4748A]">ты думаешь</span>
             </h2>
-            <p className="text-base sm:text-lg text-[#7A6A64]">Мы слышали это раньше — и готовы ответить</p>
+            <p className="text-base sm:text-lg text-white/55">Давай честно</p>
           </div>
 
           <div className="space-y-4">
-            {objections.map((obj, i) => (
-              <div key={i} className="rounded-2xl bg-white ring-1 ring-[#B07A8A]/15 p-6 sm:p-8">
+            {[
+              {
+                icon: "HelpCircle",
+                title: "«А если не поможет?»",
+                answer: "Это мой самый востребованный проект. Я собрала там всё, чтобы ты не стояла на месте. Мы работаем с причиной, а не со следствием.",
+              },
+              {
+                icon: "Wallet",
+                title: "«Это не окупится...»",
+                answer: "Остановка стоит дороже. Подумай, сколько денег и сил ты уже слила на БАДы, кофе и курсы, которые не сработали? Инвестиция в себя — самая выгодная.",
+              },
+              {
+                icon: "Lock",
+                title: "«Страшно, что другие узнают обо мне...»",
+                answer: "Это твой личный путь. Всё конфиденциально. Мы не будем вывешивать твои скрины без спроса.",
+              },
+              {
+                icon: "Users",
+                title: "И главное — не все будут похожи как один ☝️",
+                answer: "У каждой своя боль. Тем более участвуя в расстановках заместителем, ты даже можешь не говорить о своих проблемах — всё трансформируется без озвучивания своей боли. Ты работаешь над собой, а не для показухи.",
+              },
+            ].map((obj, i) => (
+              <div key={i} className="rounded-2xl bg-white/4 ring-1 ring-white/10 p-6 sm:p-8 hover:ring-[#C4748A]/40 transition-all">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#B07A8A]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Icon name={obj.icon} size={18} className="text-[#B07A8A]" />
+                  <div className="w-10 h-10 rounded-xl bg-[#C4748A]/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Icon name={obj.icon} size={18} className="text-[#C4748A]" />
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-[#2C2320] mb-3">{obj.title}</h3>
-                    <p className="text-sm sm:text-base text-[#7A6A64] leading-relaxed">{obj.answer}</p>
+                    <h3 className="text-base sm:text-lg font-bold text-white mb-3" style={{fontFamily:"'Playfair Display',serif"}}>{obj.title}</h3>
+                    <p className="text-sm sm:text-base text-white/65 leading-relaxed">{obj.answer}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 p-6 bg-[#B07A8A] rounded-2xl text-center">
-            <p className="text-white font-bold text-lg mb-2">Гарантия результата</p>
-            <p className="text-white/80 text-sm mb-5">Если через 7 дней ты не почувствуешь никакого изменения — вернём деньги без вопросов</p>
+          <div className="mt-8 p-7 bg-gradient-to-br from-[#8B1A4A] to-[#A35570] rounded-3xl text-center shadow-2xl shadow-[#C4748A]/20">
+            <p className="text-white font-bold text-lg mb-2" style={{fontFamily:"'Playfair Display',serif"}}>Гарантия результата</p>
+            <p className="text-white/85 text-sm mb-5">Если через 7 дней ты не почувствуешь никакого изменения — вернём деньги без вопросов</p>
             <Button
-              className="bg-white hover:bg-[#F3EEE9] text-[#8C5C6B] rounded-full px-8 font-bold min-h-[48px]"
+              className="bg-white hover:bg-white/90 text-[#8B1A4A] rounded-full px-8 font-bold min-h-[48px]"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Попробовать с гарантией
@@ -652,33 +910,33 @@ const Index = () => {
       </section>
 
       {/* ── FAQ ── */}
-      <section id="faq" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#FAF7F5]">
+      <section id="faq" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#0D0A0B]">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#2C2320] mb-4">
-              Частые вопросы
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4" style={{fontFamily:"'Playfair Display',serif"}}>
+              Частые <span className="italic text-[#C4748A]">вопросы</span>
             </h2>
-            <p className="text-base sm:text-lg text-[#7A6A64]">Всё, что важно знать перед вступлением</p>
+            <p className="text-base sm:text-lg text-white/55">Всё, что важно знать перед вступлением</p>
           </div>
 
           <div className="space-y-3">
             {faqs.map((faq, index) => (
-              <div key={index} className="rounded-2xl bg-white ring-1 ring-[#B07A8A]/15 overflow-hidden shadow-sm hover:ring-[#B07A8A]/35 transition-all">
+              <div key={index} className="rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:ring-[#C4748A]/40 transition-all">
                 <button
-                  className="w-full flex items-center justify-between px-5 sm:px-6 py-5 text-left hover:bg-[#FAF7F5] transition-colors min-h-[64px]"
+                  className="w-full flex items-center justify-between px-5 sm:px-6 py-5 text-left hover:bg-white/5 transition-colors min-h-[64px]"
                   onClick={() => toggleFaq(index)}
                 >
-                  <h3 className="text-sm sm:text-base font-semibold pr-4 text-[#2C2320]">{faq.question}</h3>
-                  <div className="w-8 h-8 rounded-full bg-[#B07A8A]/10 flex items-center justify-center flex-shrink-0">
+                  <h3 className="text-sm sm:text-base font-semibold pr-4 text-white" style={{fontFamily:"'Playfair Display',serif"}}>{faq.question}</h3>
+                  <div className="w-8 h-8 rounded-full bg-[#C4748A]/15 flex items-center justify-center flex-shrink-0">
                     {openFaq === index
-                      ? <Minus size={15} className="text-[#B07A8A]" />
-                      : <Plus size={15} className="text-[#B07A8A]" />
+                      ? <Minus size={15} className="text-[#C4748A]" />
+                      : <Plus size={15} className="text-[#C4748A]" />
                     }
                   </div>
                 </button>
                 {openFaq === index && (
                   <div className="px-5 sm:px-6 pb-5">
-                    <p className="text-sm sm:text-base text-[#7A6A64] leading-relaxed">{faq.answer}</p>
+                    <p className="text-sm sm:text-base text-white/65 leading-relaxed">{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -688,62 +946,62 @@ const Index = () => {
       </section>
 
       {/* ── FINAL CTA / CONTACT ── */}
-      <section id="contact" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#F3EEE9] overflow-hidden">
+      <section id="contact" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#100C0D] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#B07A8A]/8 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B07A8A]/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#8B1A4A]/15 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#C4748A]/10 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
         </div>
         <div className="relative max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B07A8A]/12 ring-1 ring-[#B07A8A]/30 rounded-full mb-5">
-              <span className="w-2 h-2 rounded-full bg-[#B07A8A] animate-pulse" />
-              <span className="text-sm font-medium text-[#8C5C6B]">Мест осталось мало</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4748A]/15 ring-1 ring-[#C4748A]/30 rounded-full mb-5">
+              <span className="w-2 h-2 rounded-full bg-[#C4748A] animate-pulse" />
+              <span className="text-sm font-medium text-[#E0A0B0]">Мест осталось мало</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#2C2320] mb-4 leading-tight">
-              Начни жить <span className="text-[#B07A8A]">для себя</span><br />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight" style={{fontFamily:"'Playfair Display',serif"}}>
+              Начни жить <span className="italic text-[#C4748A]">для себя</span><br />
               прямо сейчас
             </h2>
-            <p className="text-base sm:text-xl text-[#7A6A64] max-w-lg mx-auto">
+            <p className="text-base sm:text-xl text-white/55 max-w-lg mx-auto">
               Оставь заявку — я свяжусь с тобой в течение 2 часов и расскажу всё про ближайший старт
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Форма */}
-            <div className="bg-white rounded-2xl ring-1 ring-[#B07A8A]/15 p-6 sm:p-8 shadow-sm">
-              <h3 className="text-xl font-bold mb-5 text-[#2C2320]">Занять место в клубе</h3>
+            <div className="bg-white/4 rounded-3xl ring-1 ring-white/10 p-6 sm:p-8 backdrop-blur">
+              <h3 className="text-xl font-bold mb-5 text-white" style={{fontFamily:"'Playfair Display',serif"}}>Занять место в клубе</h3>
               <form className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-[#2C2320]">Имя</label>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-white/80">Имя</label>
                   <input
                     type="text"
                     id="name"
-                    className="w-full px-4 py-3 rounded-xl border-2 border-[#B07A8A]/20 focus:border-[#B07A8A] focus:ring-0 outline-none bg-[#FAF7F5] text-[#2C2320] transition-colors placeholder:text-[#7A6A64]/50 text-base"
+                    className="w-full px-4 py-3 rounded-xl border border-white/15 focus:border-[#C4748A] focus:ring-0 outline-none bg-white/5 text-white transition-colors placeholder:text-white/30 text-base"
                     placeholder="Как тебя зовут?"
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-2 text-[#2C2320]">Телефон или WhatsApp</label>
+                  <label htmlFor="phone" className="block text-sm font-medium mb-2 text-white/80">Телефон или WhatsApp</label>
                   <input
                     type="tel"
                     id="phone"
-                    className="w-full px-4 py-3 rounded-xl border-2 border-[#B07A8A]/20 focus:border-[#B07A8A] focus:ring-0 outline-none bg-[#FAF7F5] text-[#2C2320] transition-colors placeholder:text-[#7A6A64]/50 text-base"
+                    className="w-full px-4 py-3 rounded-xl border border-white/15 focus:border-[#C4748A] focus:ring-0 outline-none bg-white/5 text-white transition-colors placeholder:text-white/30 text-base"
                     placeholder="+7 (___) ___-__-__"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-[#2C2320]">Что хочешь изменить в жизни?</label>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-white/80">Что хочешь изменить в жизни?</label>
                   <textarea
                     id="message"
                     rows={3}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-[#B07A8A]/20 focus:border-[#B07A8A] focus:ring-0 outline-none resize-none bg-[#FAF7F5] text-[#2C2320] transition-colors placeholder:text-[#7A6A64]/50 text-base"
+                    className="w-full px-4 py-3 rounded-xl border border-white/15 focus:border-[#C4748A] focus:ring-0 outline-none resize-none bg-white/5 text-white transition-colors placeholder:text-white/30 text-base"
                     placeholder="Напиши коротко — от чего хочешь избавиться и к чему прийти"
                   />
                 </div>
-                <Button className="w-full bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-xl font-bold text-base shadow-lg shadow-[#B07A8A]/25 min-h-[52px]">
+                <Button className="w-full bg-[#C4748A] hover:bg-[#A35570] text-white rounded-xl font-bold text-base shadow-lg shadow-[#C4748A]/30 min-h-[52px]">
                   Хочу в клуб — отправить заявку
                 </Button>
-                <p className="text-xs text-center text-[#7A6A64]/70">Нажимая кнопку, ты соглашаешься на обработку данных. Спама не будет.</p>
+                <p className="text-xs text-center text-white/40">Нажимая кнопку, ты соглашаешься на обработку данных. Спама не будет.</p>
               </form>
             </div>
 
@@ -757,9 +1015,9 @@ const Index = () => {
                   { icon: "ShieldCheck", text: "Гарантия результата за 7 дней" },
                   { icon: "Phone", text: "+7 951 140-83-63" },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 text-[#7A6A64]">
-                    <div className="w-9 h-9 rounded-full bg-[#B07A8A]/12 flex items-center justify-center flex-shrink-0">
-                      <Icon name={item.icon} size={15} className="text-[#B07A8A]" />
+                  <div key={i} className="flex items-center gap-3 text-white/65">
+                    <div className="w-9 h-9 rounded-full bg-[#C4748A]/15 flex items-center justify-center flex-shrink-0">
+                      <Icon name={item.icon} size={15} className="text-[#C4748A]" />
                     </div>
                     <span className="text-sm sm:text-base">{item.text}</span>
                   </div>
@@ -767,21 +1025,21 @@ const Index = () => {
               </div>
 
               {/* Карточка автора */}
-              <div className="rounded-2xl bg-white ring-1 ring-[#B07A8A]/15 overflow-hidden shadow-sm">
+              <div className="rounded-3xl bg-white/4 ring-1 ring-white/10 overflow-hidden">
                 <div className="w-full h-56 sm:h-64 overflow-hidden">
                   <img
-                    src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/55508f1c-2bfb-4ec9-9c75-73c535e43541.jpeg"
+                    src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/0db77fe1-89f9-4bac-89ae-b51b42927fec.jpeg"
                     alt="Ирина Абрамова"
                     className="w-full h-full object-cover"
                     style={{ objectPosition: "center 15%" }}
                   />
                 </div>
                 <div className="p-5">
-                  <h4 className="text-base font-bold text-[#2C2320]">Абрамова Ирина</h4>
-                  <p className="text-[#7A6A64] text-xs mb-4">Психолог · Энерготерапевт · Расстановщик</p>
+                  <h4 className="text-base font-bold text-white" style={{fontFamily:"'Playfair Display',serif"}}>Абрамова Ирина</h4>
+                  <p className="text-white/55 text-xs mb-4">Психолог · Энерготерапевт · Расстановщик</p>
                   <div className="flex gap-2">
                     <a href="tel:+79511408363" className="flex-1">
-                      <Button size="sm" className="w-full bg-[#B07A8A] hover:bg-[#8C5C6B] text-white rounded-lg flex items-center justify-center gap-1.5 text-xs min-h-[40px]">
+                      <Button size="sm" className="w-full bg-[#C4748A] hover:bg-[#A35570] text-white rounded-lg flex items-center justify-center gap-1.5 text-xs min-h-[40px]">
                         <Icon name="Phone" size={13} />
                         Позвонить
                       </Button>
@@ -801,15 +1059,15 @@ const Index = () => {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="relative py-10 px-4 sm:px-6 bg-[#2C2320] text-white/60 text-center">
+      <footer className="relative py-10 px-4 sm:px-6 bg-[#08060700] bg-black text-white/60 text-center border-t border-white/10">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-center gap-2 mb-3">
-            <Icon name="Brain" size={18} className="text-[#B07A8A]" />
-            <span className="font-black text-white tracking-wide">НЕЙРОФИТНЕС</span>
+            <Icon name="Brain" size={18} className="text-[#C4748A]" />
+            <span className="font-black text-white tracking-widest" style={{fontFamily:"'Playfair Display',serif"}}>НЕЙРОФИТНЕС</span>
           </div>
           <p className="text-sm text-white/40 mb-1">Онлайн-клуб для женщин · Абрамова Ирина</p>
           <p className="text-sm">
-            <a href="tel:+79511408363" className="hover:text-[#C49AA6] transition-colors">+7 951 140-83-63</a>
+            <a href="tel:+79511408363" className="hover:text-[#E0A0B0] transition-colors">+7 951 140-83-63</a>
           </p>
           <div className="flex items-center justify-center gap-3 mt-4">
             <a
