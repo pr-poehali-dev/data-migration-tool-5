@@ -174,7 +174,7 @@ const HeroAndManifesto = () => {
                 desc: "Уверенная, спокойная, в своей энергии",
               },
               {
-                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/0d1de23a-1d85-4090-92f8-220dd39cff7d.jpeg",
+                img: "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/6c111e54-7476-4b84-9a26-e091ccbd0ba6.jpeg",
                 label: "Чувственность",
                 desc: "Нежная, наслаждающаяся, любящая",
               },
