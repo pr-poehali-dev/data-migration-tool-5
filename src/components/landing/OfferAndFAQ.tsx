@@ -31,7 +31,7 @@ const tariffs = [
   },
   {
     name: "VIP",
-    price: "35 000 ₽",
+    price: "48 500 ₽",
     accent: true,
     features: [
       "Личная расстановка",
@@ -41,7 +41,7 @@ const tariffs = [
   },
   {
     name: "Super VIP",
-    price: "48 500 ₽",
+    price: "35 000 ₽",
     accent: false,
     features: [
       "Участие в клубе 30 дней",
