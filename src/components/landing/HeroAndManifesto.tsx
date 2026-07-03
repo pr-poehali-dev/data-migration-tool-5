@@ -12,9 +12,9 @@ const HeroAndManifesto = () => {
           alt="Ирина и Вячеслав"
           className="absolute inset-0 w-full h-full object-cover object-top"
         />
-        {/* Лёгкое затемнение для читабельности */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/60" />
-        <div className="absolute inset-0 bg-black/20" />
+        {/* Затемнение снизу для читабельности, лица сверху остаются светлыми */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0F1A14]" />
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
 
         {/* Nav */}
         <nav className="relative z-10 flex items-center justify-between px-4 sm:px-6 md:px-12 py-5">
