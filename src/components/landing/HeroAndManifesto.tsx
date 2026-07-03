@@ -48,8 +48,8 @@ const HeroAndManifesto = () => {
           </Button>
         </nav>
 
-        {/* Hero Content — центрированный */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 md:px-12 pb-10">
+        {/* Hero Content — смещён вниз, чтобы лица были видны */}
+        <div className="relative z-10 flex flex-col items-center justify-end text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 md:px-12 pb-16 sm:pb-20">
           <h1 className="leading-none mb-6" style={{fontFamily:"'Playfair Display',serif"}}>
             <span className="block text-4xl sm:text-5xl md:text-6xl font-light italic text-white">Всё</span>
             <span className="block text-3xl sm:text-5xl md:text-6xl font-black tracking-wide uppercase text-white">возможно</span>
