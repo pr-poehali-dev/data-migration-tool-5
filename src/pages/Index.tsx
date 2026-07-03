@@ -1,6 +1,7 @@
 import HeroAndManifesto from "@/components/landing/HeroAndManifesto"
 import ValueAndAuthor from "@/components/landing/ValueAndAuthor"
 import OfferAndFAQ from "@/components/landing/OfferAndFAQ"
+import Reviews from "@/components/landing/Reviews"
 import ContactAndFooter from "@/components/landing/ContactAndFooter"
 
 // Палитра — RETREAT NATURE
@@ -15,6 +16,7 @@ const Index = () => {
     <div className="min-h-screen bg-[#0F1A14] text-[#F4F6F2]">
       <HeroAndManifesto />
       <ValueAndAuthor />
+      <Reviews />
       <OfferAndFAQ />
       <ContactAndFooter />
     </div>
