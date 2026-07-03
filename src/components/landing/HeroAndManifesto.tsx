@@ -50,8 +50,8 @@ const HeroAndManifesto = () => {
         </nav>
 
         {/* Hero Content — смещён ниже, чтобы лица были видны */}
-        <div className="relative z-10 flex flex-col items-center justify-end text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 md:px-12 pb-8 sm:pb-10">
-          <h1 className="leading-none mb-6 animate-fade-up" style={{fontFamily:"'Playfair Display',serif"}}>
+        <div className="relative z-10 flex flex-col items-center justify-end text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 md:px-12 pb-4 sm:pb-6">
+          <h1 className="mb-6 animate-fade-up" style={{fontFamily:"'Playfair Display',serif", lineHeight: '0.9'}}>
             <span className="block text-4xl sm:text-5xl md:text-6xl font-black tracking-wide uppercase text-white">ВСЁ</span>
             <span className="block text-3xl sm:text-5xl md:text-6xl font-black tracking-wide uppercase text-white">ВОЗМОЖНО</span>
           </h1>
