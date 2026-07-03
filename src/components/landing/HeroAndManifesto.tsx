@@ -19,9 +19,9 @@ const HeroAndManifesto = () => {
 
         {/* Nav */}
         <nav className="relative z-10 flex items-center justify-between px-4 sm:px-6 md:px-12 py-5">
-          <div className="flex items-center gap-1.5 px-4 py-2 bg-black/30 ring-1 ring-white/15 backdrop-blur rounded-full shadow-lg">
-            <span className="text-[#A7D28E] text-lg sm:text-xl font-black tracking-tight drop-shadow" style={{fontFamily:"'Playfair Display',serif"}}>Всё</span>
-            <span className="text-white text-lg sm:text-xl font-black tracking-widest uppercase drop-shadow" style={{fontFamily:"'Raleway',sans-serif"}}>возможно</span>
+          <div className="flex items-center gap-2 px-4 py-2 bg-black/30 ring-1 ring-white/15 backdrop-blur rounded-full shadow-lg">
+            <Icon name="Leaf" size={16} className="text-[#A7D28E]" />
+            <span className="text-white text-sm font-semibold tracking-widest uppercase drop-shadow" style={{fontFamily:"'Raleway',sans-serif"}}>Ретрит 2026</span>
           </div>
 
           <div className="hidden md:flex items-center gap-1">
@@ -52,8 +52,8 @@ const HeroAndManifesto = () => {
         {/* Hero Content — смещён ниже, чтобы лица были видны */}
         <div className="relative z-10 flex flex-col items-center justify-end text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 md:px-12 pb-8 sm:pb-10">
           <h1 className="leading-none mb-6 animate-fade-up" style={{fontFamily:"'Playfair Display',serif"}}>
-            <span className="block text-4xl sm:text-5xl md:text-6xl font-light italic text-white">Всё</span>
-            <span className="block text-3xl sm:text-5xl md:text-6xl font-black tracking-wide uppercase text-white">возможно</span>
+            <span className="block text-4xl sm:text-5xl md:text-6xl font-black tracking-wide uppercase text-white">ВСЁ</span>
+            <span className="block text-3xl sm:text-5xl md:text-6xl font-black tracking-wide uppercase text-white">ВОЗМОЖНО</span>
           </h1>
 
           <p className="text-lg sm:text-2xl text-white/85 leading-relaxed mb-10 max-w-2xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
