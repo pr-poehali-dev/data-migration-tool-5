@@ -50,16 +50,16 @@ const HeroAndManifesto = () => {
 
         {/* Hero Content — смещён вниз, чтобы лица были видны */}
         <div className="relative z-10 flex flex-col items-center justify-end text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 md:px-12 pb-16 sm:pb-20">
-          <h1 className="leading-none mb-6" style={{fontFamily:"'Playfair Display',serif"}}>
+          <h1 className="leading-none mb-6 animate-fade-up" style={{fontFamily:"'Playfair Display',serif"}}>
             <span className="block text-4xl sm:text-5xl md:text-6xl font-light italic text-white">Всё</span>
             <span className="block text-3xl sm:text-5xl md:text-6xl font-black tracking-wide uppercase text-white">возможно</span>
           </h1>
 
-          <p className="text-lg sm:text-2xl text-white/85 leading-relaxed mb-10 max-w-2xl">
+          <p className="text-lg sm:text-2xl text-white/85 leading-relaxed mb-10 max-w-2xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
             Ретрит для тела и души. Психология, йога, расстановки и телесные практики в едином потоке — 7 дней у моря.
           </p>
 
-          <div className="flex flex-col items-center gap-4 w-full max-w-md">
+          <div className="flex flex-col items-center gap-4 w-full max-w-md animate-fade-up" style={{ animationDelay: '0.4s' }}>
             <Button
               size="lg"
               onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
