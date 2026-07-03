@@ -12,15 +12,16 @@ const HeroAndManifesto = () => {
           alt="Ирина и Вячеслав"
           className="absolute inset-0 w-full h-full object-cover object-top"
         />
-        {/* Затемнение снизу для читабельности, лица сверху остаются светлыми */}
+        {/* Затемнение сверху и снизу для читабельности */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0F1A14]" />
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/45 to-transparent" />
 
         {/* Nav */}
         <nav className="relative z-10 flex items-center justify-between px-4 sm:px-6 md:px-12 py-5">
-          <div className="flex items-center gap-1.5">
-            <span className="text-[#A7D28E] text-lg font-black tracking-tight" style={{fontFamily:"'Playfair Display',serif"}}>Всё</span>
-            <span className="text-white text-lg font-black tracking-widest uppercase" style={{fontFamily:"'Raleway',sans-serif"}}>возможно</span>
+          <div className="flex items-center gap-1.5 px-4 py-2 bg-black/30 ring-1 ring-white/15 backdrop-blur rounded-full shadow-lg">
+            <span className="text-[#A7D28E] text-lg sm:text-xl font-black tracking-tight drop-shadow" style={{fontFamily:"'Playfair Display',serif"}}>Всё</span>
+            <span className="text-white text-lg sm:text-xl font-black tracking-widest uppercase drop-shadow" style={{fontFamily:"'Raleway',sans-serif"}}>возможно</span>
           </div>
 
           <div className="hidden md:flex items-center gap-1">
@@ -48,8 +49,8 @@ const HeroAndManifesto = () => {
           </Button>
         </nav>
 
-        {/* Hero Content — смещён вниз, чтобы лица были видны */}
-        <div className="relative z-10 flex flex-col items-center justify-end text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 md:px-12 pb-16 sm:pb-20">
+        {/* Hero Content — смещён ниже, чтобы лица были видны */}
+        <div className="relative z-10 flex flex-col items-center justify-end text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 md:px-12 pb-8 sm:pb-10">
           <h1 className="leading-none mb-6 animate-fade-up" style={{fontFamily:"'Playfair Display',serif"}}>
             <span className="block text-4xl sm:text-5xl md:text-6xl font-light italic text-white">Всё</span>
             <span className="block text-3xl sm:text-5xl md:text-6xl font-black tracking-wide uppercase text-white">возможно</span>

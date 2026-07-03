@@ -169,7 +169,7 @@ const ValueAndAuthor = () => {
             <div className="relative order-1 lg:order-2">
               <div className="absolute -inset-3 bg-gradient-to-bl from-[#7FB069]/25 to-transparent rounded-3xl blur-2xl" />
               <img
-                src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/d582fc37-40a3-4b81-b932-075835baa4cd.png"
+                src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/3fb72fbe-4a40-4cf7-bf4a-d5b4dda0ce86.png"
                 alt="Вячеслав Домовец"
                 className="relative z-10 w-full max-w-sm mx-auto rounded-3xl object-cover shadow-2xl ring-1 ring-black/5"
                 style={{ aspectRatio: "3/4", objectPosition: "center top" }}
