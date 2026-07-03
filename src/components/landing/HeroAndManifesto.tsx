@@ -41,7 +41,7 @@ const HeroAndManifesto = () => {
           </div>
 
           <Button
-            className="bg-[#7FB069] hover:bg-[#6B9B57] text-[#0F1A14] rounded-full px-5 sm:px-6 text-sm font-bold shadow-lg shadow-[#7FB069]/30 min-h-[44px]"
+            className="bg-[#2F5233] hover:bg-[#264428] text-white rounded-full px-5 sm:px-6 text-sm font-bold shadow-lg shadow-[#2F5233]/30 min-h-[44px]"
             onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
           >
             Забронировать
@@ -51,8 +51,8 @@ const HeroAndManifesto = () => {
         {/* Hero Content — центрированный */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 md:px-12 pb-10">
           <h1 className="leading-none mb-6" style={{fontFamily:"'Playfair Display',serif"}}>
-            <span className="block text-6xl sm:text-8xl md:text-9xl font-light italic text-[#A7D28E]">Всё</span>
-            <span className="block text-5xl sm:text-7xl md:text-8xl font-black tracking-wide uppercase text-white">возможно</span>
+            <span className="block text-4xl sm:text-5xl md:text-6xl font-light italic text-white">Всё</span>
+            <span className="block text-3xl sm:text-5xl md:text-6xl font-black tracking-wide uppercase text-white">возможно</span>
           </h1>
 
           <p className="text-lg sm:text-2xl text-white/85 leading-relaxed mb-10 max-w-2xl">
@@ -63,7 +63,7 @@ const HeroAndManifesto = () => {
             <Button
               size="lg"
               onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
-              className="h-16 w-full text-lg font-bold bg-[#7FB069] hover:bg-[#6B9B57] text-[#0F1A14] rounded-full shadow-xl shadow-[#7FB069]/30"
+              className="h-16 w-full text-lg font-bold bg-[#2F5233] hover:bg-[#264428] text-white rounded-full shadow-xl shadow-[#2F5233]/30"
             >
               Забронировать место
             </Button>
