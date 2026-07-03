@@ -4,33 +4,22 @@ import Icon from "@/components/ui/icon"
 const HeroAndManifesto = () => {
   return (
     <>
-      {/* ── HERO (split) ── */}
-      <section className="relative min-h-screen overflow-hidden bg-[#0E2A2E]">
-        {/* Split-фото: слева она, справа он */}
-        <div className="absolute inset-0 flex">
-          <div className="relative w-1/2 h-full">
-            <img
-              src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/b3cfb7f7-7248-4d55-bf63-abea2fcf1484.jpeg"
-              alt="Ирина"
-              className="w-full h-full object-cover object-top"
-            />
-          </div>
-          <div className="relative w-1/2 h-full">
-            <img
-              src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/d582fc37-40a3-4b81-b932-075835baa4cd.png"
-              alt="Вячеслав"
-              className="w-full h-full object-cover object-top"
-            />
-          </div>
-        </div>
-        {/* Затемнение для читабельности */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-[#0E2A2E]/95" />
-        <div className="absolute inset-0 bg-black/25" />
+      {/* ── HERO ── */}
+      <section className="relative min-h-screen overflow-hidden bg-[#0F1A14]">
+        {/* Совместное фото */}
+        <img
+          src="https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/bucket/c72d79a0-41d9-48a9-a9d7-7fa8f6f30953.jpeg"
+          alt="Ирина и Вячеслав"
+          className="absolute inset-0 w-full h-full object-cover object-top"
+        />
+        {/* Лёгкое затемнение для читабельности */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/60" />
+        <div className="absolute inset-0 bg-black/20" />
 
         {/* Nav */}
         <nav className="relative z-10 flex items-center justify-between px-4 sm:px-6 md:px-12 py-5">
           <div className="flex items-center gap-1.5">
-            <span className="text-[#3DBFC4] text-lg font-black tracking-tight" style={{fontFamily:"'Playfair Display',serif"}}>Всё</span>
+            <span className="text-[#A7D28E] text-lg font-black tracking-tight" style={{fontFamily:"'Playfair Display',serif"}}>Всё</span>
             <span className="text-white text-lg font-black tracking-widest uppercase" style={{fontFamily:"'Raleway',sans-serif"}}>возможно</span>
           </div>
 
@@ -52,7 +41,7 @@ const HeroAndManifesto = () => {
           </div>
 
           <Button
-            className="bg-[#3DBFC4] hover:bg-[#33A8AC] text-white rounded-full px-5 sm:px-6 text-sm font-bold shadow-lg shadow-[#3DBFC4]/30 min-h-[44px]"
+            className="bg-[#7FB069] hover:bg-[#6B9B57] text-[#0F1A14] rounded-full px-5 sm:px-6 text-sm font-bold shadow-lg shadow-[#7FB069]/30 min-h-[44px]"
             onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
           >
             Забронировать
@@ -61,9 +50,9 @@ const HeroAndManifesto = () => {
 
         {/* Hero Content — центрированный */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 md:px-12 pb-10">
-          <h1 className="text-white leading-none mb-6" style={{fontFamily:"'Playfair Display',serif"}}>
-            <span className="block text-6xl sm:text-8xl md:text-9xl font-light italic">Всё</span>
-            <span className="block text-5xl sm:text-7xl md:text-8xl font-black tracking-wide uppercase">возможно</span>
+          <h1 className="leading-none mb-6" style={{fontFamily:"'Playfair Display',serif"}}>
+            <span className="block text-6xl sm:text-8xl md:text-9xl font-light italic text-[#A7D28E]">Всё</span>
+            <span className="block text-5xl sm:text-7xl md:text-8xl font-black tracking-wide uppercase text-white">возможно</span>
           </h1>
 
           <p className="text-lg sm:text-2xl text-white/85 leading-relaxed mb-10 max-w-2xl">
@@ -74,7 +63,7 @@ const HeroAndManifesto = () => {
             <Button
               size="lg"
               onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
-              className="h-16 w-full text-lg font-bold bg-[#3DBFC4] hover:bg-[#33A8AC] text-white rounded-full shadow-xl shadow-[#3DBFC4]/30"
+              className="h-16 w-full text-lg font-bold bg-[#7FB069] hover:bg-[#6B9B57] text-[#0F1A14] rounded-full shadow-xl shadow-[#7FB069]/30"
             >
               Забронировать место
             </Button>
@@ -90,15 +79,15 @@ const HeroAndManifesto = () => {
 
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-10 text-white/70 text-sm">
             <div className="flex items-center gap-2">
-              <Icon name="MapPin" size={16} className="text-[#3DBFC4]" />
+              <Icon name="MapPin" size={16} className="text-[#A7D28E]" />
               Турция · 6–7 сентября 2026
             </div>
             <div className="flex items-center gap-2">
-              <Icon name="Users" size={16} className="text-[#3DBFC4]" />
+              <Icon name="Users" size={16} className="text-[#A7D28E]" />
               Места ограничены
             </div>
             <div className="flex items-center gap-2">
-              <Icon name="Heart" size={16} className="text-[#3DBFC4]" />
+              <Icon name="Heart" size={16} className="text-[#A7D28E]" />
               Дети до 14 — бесплатно
             </div>
           </div>
