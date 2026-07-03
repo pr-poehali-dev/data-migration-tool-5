@@ -3,16 +3,16 @@ import ValueAndAuthor from "@/components/landing/ValueAndAuthor"
 import OfferAndFAQ from "@/components/landing/OfferAndFAQ"
 import ContactAndFooter from "@/components/landing/ContactAndFooter"
 
-// Палитра — DARK LUXE
-// --bg-main:    #0D0A0B   — глубокий чёрный
-// --bg-alt:     #100C0D   — графит
-// --accent:     #C4748A   — пыльная роза
-// --accent-dk:  #8B1A4A   — глубокий бордо
-// --accent-lt:  #E0A0B0   — нежный розовый
+// Палитра — RETREAT NATURE
+// --bg-dark:    #0F1A14   — глубокий лесной зелёный
+// --bg-light:   #F4F6F2   — тёплый белый
+// --accent:     #7FB069   — свежий зелёный
+// --accent-dk:  #4A7A3A   — глубокий зелёный
+// --accent-lt:  #A7D28E   — светло-зелёный
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#0D0A0B] text-[#F5EEE8]">
+    <div className="min-h-screen bg-[#0F1A14] text-[#F4F6F2]">
       <HeroAndManifesto />
       <ValueAndAuthor />
       <OfferAndFAQ />
