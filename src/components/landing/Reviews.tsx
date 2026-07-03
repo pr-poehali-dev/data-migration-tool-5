@@ -1,4 +1,5 @@
 import Icon from "@/components/ui/icon"
+import Reveal from "@/components/landing/Reveal"
 
 const screenshots = [
   {
@@ -45,31 +46,35 @@ const Reviews = () => {
         {/* Скриншоты */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-14">
           {screenshots.map((s, i) => (
-            <div key={i} className="group flex flex-col gap-3">
-              <div className="rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-xl bg-white group-hover:ring-[#7FB069]/40 transition-all">
-                <img
-                  src={s.img}
-                  alt="Отзыв участницы"
-                  className="w-full object-cover object-top"
-                  style={{ maxHeight: "360px" }}
-                />
+            <Reveal key={i} delay={i * 120}>
+              <div className="group flex flex-col gap-3">
+                <div className="rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-xl bg-white group-hover:ring-[#7FB069]/40 transition-all">
+                  <img
+                    src={s.img}
+                    alt="Отзыв участницы"
+                    className="w-full object-cover object-top"
+                    style={{ maxHeight: "360px" }}
+                  />
+                </div>
+                <p className="text-[#4A5850] text-sm leading-relaxed px-1 italic">
+                  «{s.quote}»
+                </p>
               </div>
-              <p className="text-[#4A5850] text-sm leading-relaxed px-1 italic">
-                «{s.quote}»
-              </p>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Короткие цитаты */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
           {shortQuotes.map((q, i) => (
-            <div key={i} className="rounded-2xl bg-white ring-1 ring-black/5 p-6 shadow-sm hover:ring-[#7FB069]/40 transition-all">
-              <Icon name="Quote" size={22} className="text-[#7FB069] mb-3" />
-              <p className="text-[#1E2B22] leading-relaxed" style={{fontFamily:"'Playfair Display',serif"}}>
-                {q}
-              </p>
-            </div>
+            <Reveal key={i} delay={i * 120}>
+              <div className="rounded-2xl bg-white ring-1 ring-black/5 p-6 shadow-sm hover:ring-[#7FB069]/40 transition-all h-full">
+                <Icon name="Quote" size={22} className="text-[#7FB069] mb-3" />
+                <p className="text-[#1E2B22] leading-relaxed" style={{fontFamily:"'Playfair Display',serif"}}>
+                  {q}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import Icon from "@/components/ui/icon"
+import Reveal from "@/components/landing/Reveal"
 
 const benefits = [
   {
@@ -57,16 +58,15 @@ const ValueAndAuthor = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
             {benefits.map((b, i) => (
-              <div
-                key={i}
-                className="group rounded-2xl bg-white/4 ring-1 ring-white/10 p-6 sm:p-8 hover:ring-[#7FB069]/40 hover:bg-white/6 transition-all"
-              >
-                <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-[#7FB069]/15 ring-1 ring-[#7FB069]/25 mb-5">
-                  <Icon name={b.icon} size={20} className="text-[#A7D28E]" />
+              <Reveal key={i} delay={(i % 3) * 120}>
+                <div className="group h-full rounded-2xl bg-white/4 ring-1 ring-white/10 p-6 sm:p-8 hover:ring-[#7FB069]/40 hover:bg-white/6 transition-all">
+                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-[#7FB069]/15 ring-1 ring-[#7FB069]/25 mb-5">
+                    <Icon name={b.icon} size={20} className="text-[#A7D28E]" />
+                  </div>
+                  <h3 className="text-base font-bold mb-2 text-white leading-snug" style={{fontFamily:"'Playfair Display',serif"}}>{b.title}</h3>
+                  <p className="text-white/50 leading-relaxed text-sm">{b.desc}</p>
                 </div>
-                <h3 className="text-base font-bold mb-2 text-white leading-snug" style={{fontFamily:"'Playfair Display',serif"}}>{b.title}</h3>
-                <p className="text-white/50 leading-relaxed text-sm">{b.desc}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
 
@@ -95,7 +95,7 @@ const ValueAndAuthor = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20">
+          <Reveal className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20">
             <div className="relative order-1">
               <div className="absolute -inset-3 bg-gradient-to-br from-[#7FB069]/25 to-transparent rounded-3xl blur-2xl" />
               <img
@@ -134,10 +134,10 @@ const ValueAndAuthor = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* ── VYACHESLAV ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <Reveal className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="order-2 lg:order-1">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#1E2B22] mb-2 leading-tight" style={{fontFamily:"'Playfair Display',serif"}}>
                 Вячеслав Домовец
@@ -179,7 +179,7 @@ const ValueAndAuthor = () => {
                 <p className="text-xl font-black">с 2011</p>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
