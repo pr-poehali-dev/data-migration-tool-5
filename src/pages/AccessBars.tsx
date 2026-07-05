@@ -28,8 +28,7 @@ const methodBenefits = [
 ]
 
 const AccessBars = () => {
-  const scrollToForm = () =>
-    document.getElementById("family-cta")?.scrollIntoView({ behavior: "smooth" })
+  const signUp = () => window.open("https://t.me/", "_blank")
 
   return (
     <div className="min-h-screen bg-[#0F1A14] text-[#F4F6F2]">
@@ -47,7 +46,7 @@ const AccessBars = () => {
           </div>
           <Button
             className="bg-[#2F5233] hover:bg-[#264428] text-white rounded-full px-5 sm:px-6 text-sm font-bold shadow-lg shadow-[#2F5233]/30 min-h-[44px]"
-            onClick={scrollToForm}
+            onClick={signUp}
           >
             Записаться
           </Button>
@@ -72,7 +71,7 @@ const AccessBars = () => {
             size="lg"
             className="bg-[#7FB069] hover:bg-[#6B9B57] text-[#0F1A14] rounded-full px-10 font-bold shadow-xl shadow-[#7FB069]/25 min-h-[52px] animate-fade-up"
             style={{ animationDelay: '0.3s' }}
-            onClick={scrollToForm}
+            onClick={signUp}
           >
             Прийти всей семьёй
           </Button>
@@ -221,28 +220,6 @@ const AccessBars = () => {
                 Мы фокусируемся на освобождении от родительских страхов и убеждений, которые бессознательно передаются следующим поколениям. Вместо того чтобы передавать тревоги детям, методика позволяет родителям освободиться от груза прошлого и подарить ребёнку свободу развивать собственный потенциал.
               </p>
             </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section id="family-cta" className="relative py-20 sm:py-28 px-4 sm:px-6 md:px-12 bg-[#F4F6F2] overflow-hidden">
-        <div className="relative max-w-2xl mx-auto text-center">
-          <Reveal>
-            <div className="text-5xl mb-6">🎉</div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1E2B22] mb-5" style={{fontFamily:"'Playfair Display',serif"}}>
-              Приходите всей семьёй!
-            </h2>
-            <p className="text-base sm:text-lg text-[#4A5850] leading-relaxed mb-10">
-              Создайте прочную основу для счастливого будущего вашего ребёнка. Запишитесь на семейный тренинг Access Bars уже сегодня.
-            </p>
-            <Button
-              size="lg"
-              className="bg-[#7FB069] hover:bg-[#6B9B57] text-[#0F1A14] rounded-full px-10 font-bold shadow-xl shadow-[#7FB069]/25 min-h-[52px]"
-              onClick={() => window.open("https://t.me/", "_blank")}
-            >
-              Записаться на тренинг
-            </Button>
           </Reveal>
         </div>
       </section>
