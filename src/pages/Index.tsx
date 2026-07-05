@@ -2,6 +2,7 @@ import HeroAndManifesto from "@/components/landing/HeroAndManifesto"
 import ValueAndAuthor from "@/components/landing/ValueAndAuthor"
 import OfferAndFAQ from "@/components/landing/OfferAndFAQ"
 import Reviews from "@/components/landing/Reviews"
+import AccessBarsBanner from "@/components/landing/AccessBarsBanner"
 import ContactAndFooter from "@/components/landing/ContactAndFooter"
 
 // Палитра — RETREAT NATURE
@@ -17,6 +18,7 @@ const Index = () => {
       <HeroAndManifesto />
       <ValueAndAuthor />
       <Reviews />
+      <AccessBarsBanner />
       <OfferAndFAQ />
       <ContactAndFooter />
     </div>
