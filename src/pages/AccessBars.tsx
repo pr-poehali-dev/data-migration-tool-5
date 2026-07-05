@@ -56,13 +56,16 @@ const AccessBars = () => {
         <div className="relative z-10 flex flex-col items-center justify-end text-center min-h-[calc(100vh-80px)] px-4 sm:px-6 md:px-12 pb-12 sm:pb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#7FB069]/15 ring-1 ring-[#7FB069]/30 rounded-full mb-6 animate-fade-up">
             <Icon name="Star" size={14} className="text-[#A7D28E]" />
-            <span className="text-sm font-medium text-[#A7D28E]">Тренинг для всей семьи</span>
+            <span className="text-sm font-medium text-[#A7D28E]">Тренинг для всей семьи на ретрите</span>
           </div>
           <h1 className="mb-6 animate-fade-up" style={{fontFamily:"'Playfair Display',serif", lineHeight: '1'}}>
             <span className="block text-3xl sm:text-5xl md:text-6xl font-black text-white">Укрепляем связь</span>
             <span className="block text-3xl sm:text-5xl md:text-6xl font-black text-[#A7D28E]">поколений</span>
           </h1>
-          <p className="text-lg sm:text-2xl text-white/85 leading-relaxed mb-10 max-w-2xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg sm:text-2xl text-white/85 leading-relaxed mb-6 max-w-2xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            Вместо того чтобы передавать свои тревоги детям, наша методика позволяет родителям освободиться от груза прошлого опыта и подарить своему ребёнку свободу развития собственного потенциала — без необходимости доказывать любовь окружающих.
+          </p>
+          <p className="text-base sm:text-lg text-white/65 leading-relaxed mb-10 max-w-2xl animate-fade-up" style={{ animationDelay: '0.25s' }}>
             Освойте технику Access Bars — освобождение от внутренних ограничений и развитие потенциала каждого члена семьи.
           </p>
           <Button

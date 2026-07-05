@@ -18,7 +18,7 @@ const AccessBarsBanner = () => {
             <div className="relative z-10 p-8 sm:p-12 md:p-16 max-w-xl">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#7FB069]/20 ring-1 ring-[#7FB069]/40 rounded-full mb-5">
                 <Icon name="Sparkles" size={14} className="text-[#A7D28E]" />
-                <span className="text-sm font-medium text-[#A7D28E]">Новый тренинг</span>
+                <span className="text-sm font-medium text-[#A7D28E]">Тренинг на ретрите</span>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight" style={{fontFamily:"'Playfair Display',serif"}}>
                 Access Bars<span className="block text-[#A7D28E]">для всей семьи</span>
