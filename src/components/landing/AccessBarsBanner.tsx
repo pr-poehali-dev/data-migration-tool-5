@@ -4,7 +4,7 @@ import Icon from "@/components/ui/icon"
 import Reveal from "@/components/landing/Reveal"
 
 const bannerImg =
-  "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/796fa77b-76dd-4cd2-b082-74a8617f2023.jpg"
+  "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/7cd48099-04cf-4e3f-a75d-6aa76c3d6b62.jpg"
 
 const AccessBarsBanner = () => {
   return (

@@ -3,13 +3,28 @@ import Icon from "@/components/ui/icon"
 import Reveal from "@/components/landing/Reveal"
 
 const heroImg =
-  "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/796fa77b-76dd-4cd2-b082-74a8617f2023.jpg"
+  "https://cdn.poehali.dev/projects/922ca72b-539f-438b-87ac-72a0a0d3577f/files/7cd48099-04cf-4e3f-a75d-6aa76c3d6b62.jpg"
 
 const kidBenefits = [
   { icon: "Focus", title: "Концентрация внимания", desc: "Значительно улучшается способность ребёнка удерживать фокус на задачах." },
   { icon: "BrainCircuit", title: "Память и обработка", desc: "Повышается эффективность запоминания и обработки информации." },
   { icon: "BookOpen", title: "Лёгкая адаптация", desc: "Ребёнку проще осваивать школьную программу без стресса и перегруза." },
   { icon: "HeartHandshake", title: "Здоровая самооценка", desc: "Формируется вера в собственные силы и спокойная уверенность в себе." },
+]
+
+const program = [
+  { icon: "GraduationCap", title: "Обучение технике Access Bars", desc: "Освоите 32 точки на голове, мягкое прикосновение к которым запускает глубокое расслабление и освобождение." },
+  { icon: "Users", title: "Практика в парах", desc: "Родители и дети работают вместе — вы сразу применяете метод друг на друге под руководством ведущего." },
+  { icon: "Wind", title: "Снятие стресса и тревог", desc: "Отпускаете накопленное напряжение, страхи и негативные установки прошлого." },
+  { icon: "Sparkles", title: "Раскрытие потенциала", desc: "Учитесь поддерживать ресурсное состояние себя и ребёнка в повседневной жизни." },
+]
+
+const methodBenefits = [
+  "Глубокое расслабление всего за одну сессию",
+  "Снижение тревожности и внутреннего напряжения",
+  "Улучшение сна, настроения и ясности мышления",
+  "Освобождение от ограничивающих убеждений",
+  "Больше энергии, лёгкости и радости каждый день",
 ]
 
 const AccessBars = () => {
@@ -76,6 +91,67 @@ const AccessBars = () => {
               Присоединяйтесь и окунитесь в атмосферу, где каждый найдёт ответы на волнующие вопросы и откроет для себя эффективные методы улучшения качества жизни.
             </p>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ── ЧТО БУДЕТ НА ТРЕНИНГЕ ── */}
+      <section className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#0F1A14] overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#7FB069]/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="relative max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#7FB069]/12 ring-1 ring-[#7FB069]/30 rounded-full mb-5">
+              <Icon name="CalendarCheck" size={14} className="text-[#A7D28E]" />
+              <span className="text-sm font-medium text-[#A7D28E]">Программа</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white" style={{fontFamily:"'Playfair Display',serif"}}>
+              Что будет<span className="text-[#A7D28E]"> на тренинге</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {program.map((p, i) => (
+              <Reveal key={i} delay={(i % 2) * 120}>
+                <div className="flex gap-4 h-full rounded-2xl bg-white/4 ring-1 ring-white/10 p-6 sm:p-8 hover:ring-[#7FB069]/40 transition-all">
+                  <div className="shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#7FB069]/15 ring-1 ring-[#7FB069]/25">
+                    <Icon name={p.icon} size={22} className="text-[#A7D28E]" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold mb-2 text-white leading-snug" style={{fontFamily:"'Playfair Display',serif"}}>{p.title}</h3>
+                    <p className="text-white/55 leading-relaxed text-sm">{p.desc}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ЧЕМ ПОЛЕЗЕН МЕТОД ── */}
+      <section className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-12 bg-[#F4F6F2] overflow-hidden">
+        <div className="relative max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#7FB069]/12 ring-1 ring-[#7FB069]/30 rounded-full mb-5">
+              <Icon name="Zap" size={14} className="text-[#4A7A3A]" />
+              <span className="text-sm font-medium text-[#4A7A3A]">Польза метода</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1E2B22] mb-5" style={{fontFamily:"'Playfair Display',serif"}}>
+              Чем полезен<span className="text-[#4A7A3A]"> Access Bars</span>
+            </h2>
+            <p className="text-base sm:text-lg text-[#4A5850] leading-relaxed">
+              Мягкая техника прикосновения к 32 точкам на голове помогает «перезагрузить» нервную систему и вернуть внутренний баланс.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            {methodBenefits.map((b, i) => (
+              <Reveal key={i} delay={(i % 2) * 100}>
+                <div className="flex items-center gap-3 rounded-2xl bg-white ring-1 ring-black/5 p-5 shadow-sm">
+                  <Icon name="CircleCheck" size={22} className="shrink-0 text-[#4A7A3A]" />
+                  <span className="text-[#1E2B22] font-medium leading-snug">{b}</span>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
