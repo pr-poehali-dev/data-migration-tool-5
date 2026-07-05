@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import Icon from "@/components/ui/icon"
+import { Link } from "react-router-dom"
 
 const HeroAndManifesto = () => {
   return (
@@ -39,6 +40,13 @@ const HeroAndManifesto = () => {
                 {item.label}
               </button>
             ))}
+            <Link
+              to="/access-bars"
+              className="flex items-center gap-1.5 px-4 py-2 bg-[#7FB069]/25 ring-1 ring-[#7FB069]/40 backdrop-blur rounded-full hover:bg-[#7FB069]/40 transition-colors text-sm text-white font-medium"
+            >
+              <Icon name="Sparkles" size={14} className="text-[#A7D28E]" />
+              Access Bars
+            </Link>
           </div>
 
           <Button
